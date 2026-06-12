@@ -184,3 +184,11 @@ details[open].acc summary::after { content: " ▴"; }
   transform: rotate(45deg); font-size: 10px; font-weight: 800; color: #06243f;
 }
 .leaflet-container { font: inherit; }
+.ma-label {
+  background: none; border: 0; box-shadow: none;
+  color: #2b6cb0; font-weight: 800; font-size: 12px;
+  text-shadow: 0 0 3px rgba(255,255,255,.9), 0 0 6px rgba(255,255,255,.7);
+}
+.ma-label::before { display: none; }
+.ma-pop { font-size: 13.5px; }
+.ma-pop a { color: #1a6fd4; font-weight: 600; }

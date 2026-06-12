@@ -55,7 +55,7 @@ WF.SPOTS = [
   // ============ CENTRAL PUGET SOUND — home water, curated deep ============
   {
     id: "lincoln-park", name: "Lincoln Park Beach", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.5310, lng: -122.3995,
+    area: "MA 10", lat: 47.5305, lng: -122.4040,
     species: ["Resident coho", "Sea-run cutthroat", "Blackmouth (nearby)"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [1,2,9,10,11,12],
     tides: ["incoming", "outgoing"], shelter: ["E","NE","N"],
@@ -67,7 +67,7 @@ WF.SPOTS = [
   },
   {
     id: "seacrest-cove2", name: "Seacrest Park / Cove 2", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.5878, lng: -122.3786,
+    area: "MA 10", lat: 47.5890, lng: -122.3760,
     species: ["Squid (winter, night)", "Blackmouth", "Sea-run cutthroat"],
     months: [1,2,5,6,7,8,9,10,11,12], prime: [10,11,12,1],
     tides: null, shelter: ["S","SW","W"],
@@ -79,7 +79,7 @@ WF.SPOTS = [
   },
   {
     id: "alki-point", name: "Alki Point", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.5764, lng: -122.4206,
+    area: "MA 10", lat: 47.5775, lng: -122.4250,
     species: ["Blackmouth", "Coho", "Sea-run cutthroat"],
     months: [1,2,3,7,8,9,10,11,12], prime: [8,9,1,2],
     tides: ["incoming","outgoing"], shelter: ["SE","E"],
@@ -91,7 +91,7 @@ WF.SPOTS = [
   },
   {
     id: "duwamish-head", name: "Duwamish Head", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.5969, lng: -122.3866,
+    area: "MA 10", lat: 47.5995, lng: -122.3880,
     species: ["Blackmouth", "Coho", "Squid (winter)"],
     months: [1,2,3,8,9,10,11,12], prime: [11,12,1,2],
     tides: ["incoming","outgoing"], shelter: ["S","SE"],
@@ -103,7 +103,7 @@ WF.SPOTS = [
   },
   {
     id: "elliott-bay-pier86", name: "Elliott Bay Fishing Pier (Pier 86)", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.6289, lng: -122.3750,
+    area: "MA 10", lat: 47.6255, lng: -122.3790,
     species: ["Coho", "Chinook (Aug openings)", "Squid (winter)"],
     months: [8,9,10,11,12,1], prime: [8,9],
     tides: ["incoming","high slack"], shelter: ["N","NE"],
@@ -115,7 +115,7 @@ WF.SPOTS = [
   },
   {
     id: "west-point", name: "West Point (Discovery Park)", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.6621, lng: -122.4351,
+    area: "MA 10", lat: 47.6620, lng: -122.4400,
     species: ["Coho", "Pink (odd years)", "Sea-run cutthroat"],
     months: [7,8,9,10], prime: [8,9],
     tides: ["incoming","outgoing"], shelter: ["E","SE"],
@@ -127,7 +127,7 @@ WF.SPOTS = [
   },
   {
     id: "golden-gardens", name: "Golden Gardens / Meadow Point", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.6900, lng: -122.4030,
+    area: "MA 10", lat: 47.6905, lng: -122.4080,
     species: ["Coho", "Pink (odd years)", "Crab (in season)"],
     months: [7,8,9,10], prime: [8,9],
     tides: ["incoming","high slack"], shelter: ["E","SE","S"],
@@ -139,7 +139,7 @@ WF.SPOTS = [
   },
   {
     id: "richmond-beach", name: "Richmond Beach", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.7646, lng: -122.3866,
+    area: "MA 10", lat: 47.7645, lng: -122.3920,
     species: ["Coho", "Sea-run cutthroat", "Pink (odd years)"],
     months: [7,8,9,10,11], prime: [8,9],
     tides: ["incoming","outgoing"], shelter: ["E"],
@@ -151,7 +151,7 @@ WF.SPOTS = [
   },
   {
     id: "jefferson-head", name: "Jefferson Head", fishery: "salt", region: "central",
-    area: "MA 10", lat: 47.7440, lng: -122.4730,
+    area: "MA 10", lat: 47.7440, lng: -122.4660,
     species: ["Blackmouth", "Coho"],
     months: [1,2,3,8,9,11,12], prime: [12,1,2],
     tides: ["incoming","outgoing"], shelter: ["W","SW"],
@@ -163,7 +163,7 @@ WF.SPOTS = [
   },
   {
     id: "point-no-point", name: "Point No Point (Hansville)", fishery: "salt", region: "central",
-    area: "MA 9", lat: 47.9122, lng: -122.5269,
+    area: "MA 9", lat: 47.9135, lng: -122.5230,
     species: ["Chinook", "Coho", "Pink (odd years)"],
     months: [7,8,9,10], prime: [7,8,9],
     tides: ["outgoing","incoming"], shelter: ["SW","W"],
@@ -175,7 +175,7 @@ WF.SPOTS = [
   },
   {
     id: "possession-bar", name: "Possession Bar (S. Whidbey)", fishery: "salt", region: "central",
-    area: "MA 9", lat: 47.8990, lng: -122.3870,
+    area: "MA 9", lat: 47.8950, lng: -122.3900,
     species: ["Chinook", "Coho", "Blackmouth"],
     months: [1,7,8,9,12], prime: [7,8],
     tides: ["incoming","outgoing"], shelter: [],
@@ -187,7 +187,7 @@ WF.SPOTS = [
   },
   {
     id: "point-defiance", name: "Point Defiance / Clay Banks", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.3170, lng: -122.5440,
+    area: "MA 11", lat: 47.3130, lng: -122.5480,
     species: ["Chinook", "Blackmouth", "Coho"],
     months: [1,2,3,6,7,8,9,12], prime: [7,8,1,2],
     tides: ["outgoing","incoming"], shelter: ["S","SE"],
@@ -200,7 +200,7 @@ WF.SPOTS = [
   },
   {
     id: "point-dalco", name: "Point Dalco (S. Vashon)", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.3349, lng: -122.5117,
+    area: "MA 11", lat: 47.3330, lng: -122.5110,
     species: ["Chinook", "Coho", "Blackmouth"],
     months: [1,2,6,7,8,9,12], prime: [7,8],
     tides: ["outgoing"], shelter: ["N","NE"],
@@ -212,7 +212,7 @@ WF.SPOTS = [
   },
   {
     id: "point-robinson", name: "Point Robinson (Maury Island)", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.3883, lng: -122.3742,
+    area: "MA 11", lat: 47.3885, lng: -122.3700,
     species: ["Coho", "Pink (odd years)", "Chinook"],
     months: [7,8,9,10], prime: [8,9],
     tides: ["incoming","outgoing"], shelter: ["W","SW"],
@@ -224,7 +224,7 @@ WF.SPOTS = [
   },
   {
     id: "les-davis-pier", name: "Les Davis Pier (Tacoma)", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.2862, lng: -122.4843,
+    area: "MA 11", lat: 47.2870, lng: -122.4840,
     species: ["Squid (winter)", "Salmon (Aug–Sep)", "Flounder"],
     months: [1,8,9,10,11,12], prime: [10,11,12],
     tides: null, shelter: ["S","SW"],
@@ -236,7 +236,7 @@ WF.SPOTS = [
   },
   {
     id: "dash-point-pier", name: "Dash Point Pier & State Park", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.3196, lng: -122.4078,
+    area: "MA 11", lat: 47.3230, lng: -122.4130,
     species: ["Salmon", "Squid (winter)", "Sea-run cutthroat"],
     months: [1,7,8,9,10,11,12], prime: [8,9],
     tides: ["incoming","high slack"], shelter: ["E","SE"],
@@ -248,7 +248,7 @@ WF.SPOTS = [
   },
   {
     id: "redondo-pier", name: "Redondo Pier & Ramp", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.3494, lng: -122.3252,
+    area: "MA 11", lat: 47.3490, lng: -122.3270,
     species: ["Squid (winter, night)", "Flounder/sole", "Salmon (passing)"],
     months: [1,2,8,9,10,11,12], prime: [10,11,12,1],
     tides: null, shelter: ["E","NE"],
@@ -260,7 +260,7 @@ WF.SPOTS = [
   },
   {
     id: "des-moines-pier", name: "Des Moines Pier", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.3998, lng: -122.3309,
+    area: "MA 11", lat: 47.4000, lng: -122.3330,
     species: ["Squid (winter)", "Salmon (Aug–Sep)", "Crab (in season)"],
     months: [1,7,8,9,10,11,12], prime: [8,9,11,12],
     tides: ["incoming"], shelter: ["E","NE"],
@@ -272,7 +272,7 @@ WF.SPOTS = [
   },
   {
     id: "three-tree-point", name: "Three Tree Point (Burien)", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.4509, lng: -122.3866,
+    area: "MA 11", lat: 47.4510, lng: -122.3900,
     species: ["Blackmouth", "Coho", "Sea-run cutthroat"],
     months: [1,2,3,8,9,10,11,12], prime: [12,1,2],
     tides: ["incoming","outgoing"], shelter: ["E","NE"],
@@ -284,7 +284,7 @@ WF.SPOTS = [
   },
   {
     id: "browns-point", name: "Browns Point (NE Tacoma)", fishery: "salt", region: "central",
-    area: "MA 11", lat: 47.3059, lng: -122.4441,
+    area: "MA 11", lat: 47.3055, lng: -122.4470,
     species: ["Chinook", "Coho", "Pink (odd years)"],
     months: [7,8,9,10], prime: [8,9],
     tides: ["incoming","outgoing"], shelter: ["SE","S"],
@@ -362,7 +362,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-meridian", name: "Lake Meridian (Kent)", fishery: "lake", region: "central",
-    lat: 47.3680, lng: -122.1430, area: "Lake",
+    lat: 47.3665, lng: -122.1320, area: "Lake",
     species: ["Stocked rainbow trout", "Largemouth bass"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -374,7 +374,7 @@ WF.SPOTS = [
   // ============ NORTH SOUND ============
   {
     id: "edmonds-pier", name: "Edmonds Fishing Pier", fishery: "salt", region: "north",
-    area: "MA 9", lat: 47.8090, lng: -122.3850,
+    area: "MA 9", lat: 47.8090, lng: -122.3950,
     species: ["Squid (Oct–Jan)", "Salmon (Aug–Sep)", "Crab (in season)"],
     months: [1,8,9,10,11,12], prime: [10,11,12],
     tides: null, shelter: ["E","NE"],
@@ -386,7 +386,7 @@ WF.SPOTS = [
   },
   {
     id: "mukilteo", name: "Mukilteo / Lighthouse Park", fishery: "salt", region: "north",
-    area: "MA 8-2", lat: 47.9480, lng: -122.3060,
+    area: "MA 8-2", lat: 47.9490, lng: -122.3080,
     species: ["Pink (odd years)", "Coho", "Sea-run cutthroat"],
     months: [7,8,9,10], prime: [8,9],
     tides: ["incoming","outgoing"], shelter: ["SE","S"],
@@ -398,7 +398,7 @@ WF.SPOTS = [
   },
   {
     id: "picnic-point", name: "Picnic Point (Humpy Hollow)", fishery: "salt", region: "north",
-    area: "MA 8-2", lat: 47.8800, lng: -122.3320,
+    area: "MA 9", lat: 47.8800, lng: -122.3350,
     species: ["Pink (odd years)", "Coho"],
     months: [8,9,10], prime: [8,9],
     tides: ["incoming"], shelter: ["E","SE"],
@@ -409,7 +409,7 @@ WF.SPOTS = [
   },
   {
     id: "tulalip-bubble", name: "Tulalip Bay 'Bubble'", fishery: "salt", region: "north",
-    area: "MA 8-2", lat: 48.0660, lng: -122.3080,
+    area: "MA 8-2", lat: 48.0620, lng: -122.2980,
     species: ["Chinook (summer terminal fishery)", "Coho"],
     months: [6,7,8,9], prime: [7,8],
     tides: ["incoming","outgoing"], shelter: ["N","NE","E"],
@@ -421,7 +421,7 @@ WF.SPOTS = [
   },
   {
     id: "kayak-point", name: "Kayak Point (Port Susan)", fishery: "salt", region: "north",
-    area: "MA 8-2", lat: 48.1369, lng: -122.3669,
+    area: "MA 8-2", lat: 48.1370, lng: -122.3700,
     species: ["Coho", "Sea-run cutthroat", "Crab (in season)"],
     months: [7,8,9,10], prime: [9],
     tides: ["incoming"], shelter: ["E","NE"],
@@ -433,7 +433,7 @@ WF.SPOTS = [
   },
   {
     id: "bush-point", name: "Bush Point (Whidbey)", fishery: "salt", region: "north",
-    area: "MA 9", lat: 48.0310, lng: -122.6060,
+    area: "MA 9", lat: 48.0310, lng: -122.6100,
     species: ["Chinook (Jul–Aug)", "Coho", "Pink (odd years)"],
     months: [7,8,9], prime: [7,8],
     tides: ["outgoing","incoming"], shelter: ["NE","E"],
@@ -445,7 +445,7 @@ WF.SPOTS = [
   },
   {
     id: "fort-casey", name: "Fort Casey / Admiralty Head", fishery: "salt", region: "north",
-    area: "MA 9", lat: 48.1580, lng: -122.6770,
+    area: "MA 9", lat: 48.1570, lng: -122.6830,
     species: ["Chinook", "Coho", "Lingcod (May–Jun 15)"],
     months: [5,6,7,8,9], prime: [7,8],
     tides: ["incoming","outgoing"], shelter: ["NE","E"],
@@ -513,7 +513,7 @@ WF.SPOTS = [
   },
   {
     id: "washington-park", name: "Burrows Pass / Washington Park (Anacortes)", fishery: "salt", region: "north",
-    area: "MA 7", lat: 48.4930, lng: -122.6920,
+    area: "MA 7", lat: 48.4895, lng: -122.6950,
     species: ["Lingcod (May–Jun 15)", "Salmon (seasonal)", "Greenling"],
     months: [5,6,7,8,9], prime: [5,6],
     tides: ["high slack","low slack"], shelter: ["N","NE"],
@@ -525,7 +525,7 @@ WF.SPOTS = [
   },
   {
     id: "bellingham-bay", name: "Bellingham Bay / Squalicum", fishery: "salt", region: "north",
-    area: "MA 7", lat: 48.7530, lng: -122.5030,
+    area: "MA 7", lat: 48.7480, lng: -122.5100,
     species: ["Coho (Sep)", "Crab (in season)", "Sea-run cutthroat"],
     months: [7,8,9,10], prime: [9],
     tides: ["incoming"], shelter: ["N","NE","E"],
@@ -561,7 +561,7 @@ WF.SPOTS = [
   // ============ SOUTH SOUND / HOOD CANAL / STRAIT ============
   {
     id: "point-fosdick", name: "Point Fosdick (Narrows)", fishery: "salt", region: "south",
-    area: "MA 13", lat: 47.2737, lng: -122.5550,
+    area: "MA 13", lat: 47.2700, lng: -122.5570,
     species: ["Blackmouth (year-round in MA 13)", "Coho"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [11,12,1,2],
     tides: ["high slack","low slack"], shelter: ["W","NW"],
@@ -573,7 +573,7 @@ WF.SPOTS = [
   },
   {
     id: "fox-island", name: "Fox Island (Hale Passage)", fishery: "salt", region: "south",
-    area: "MA 13", lat: 47.2510, lng: -122.6070,
+    area: "MA 13", lat: 47.2550, lng: -122.6060,
     species: ["Blackmouth", "Sea-run cutthroat", "Squid (winter)"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [11,12,1,2,3],
     tides: ["incoming","outgoing"], shelter: ["S","SW"],
@@ -585,7 +585,7 @@ WF.SPOTS = [
   },
   {
     id: "johnson-point", name: "Johnson Point (Olympia)", fishery: "salt", region: "south",
-    area: "MA 13", lat: 47.1750, lng: -122.8120,
+    area: "MA 13", lat: 47.1780, lng: -122.8090,
     species: ["Blackmouth", "Coho (Sep)"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [12,1,2,9],
     tides: ["incoming","outgoing"], shelter: ["W","SW"],
@@ -597,7 +597,7 @@ WF.SPOTS = [
   },
   {
     id: "devils-head", name: "Devils Head / Joemma Beach", fishery: "salt", region: "south",
-    area: "MA 13", lat: 47.1620, lng: -122.7630,
+    area: "MA 13", lat: 47.1580, lng: -122.7650,
     species: ["Blackmouth", "Coho", "Crab (in season)"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [11,12,1,9],
     tides: ["incoming","outgoing"], shelter: ["E","NE"],
@@ -609,7 +609,7 @@ WF.SPOTS = [
   },
   {
     id: "hoodsport", name: "Hoodsport Hatchery Zone", fishery: "salt", region: "south",
-    area: "MA 12", lat: 47.4060, lng: -123.1410,
+    area: "MA 12", lat: 47.4070, lng: -123.1370,
     species: ["Chum (Nov)", "Pink (odd years, Aug)", "Shrimp (May days)"],
     months: [5,8,10,11,12], prime: [11],
     tides: ["incoming","high slack"], shelter: ["W","SW"],
@@ -621,7 +621,7 @@ WF.SPOTS = [
   },
   {
     id: "seabeck", name: "Seabeck / Misery Point", fishery: "salt", region: "south",
-    area: "MA 12", lat: 47.6420, lng: -122.8290,
+    area: "MA 12", lat: 47.6550, lng: -122.8550,
     species: ["Coho (Aug–Sep)", "Sea-run cutthroat", "Shrimp (May days)"],
     months: [5,7,8,9,10], prime: [8,9],
     tides: ["incoming","outgoing"], shelter: ["E","SE"],
@@ -644,7 +644,7 @@ WF.SPOTS = [
   },
   {
     id: "american-lake", name: "American Lake (Lakewood)", fishery: "lake", region: "south",
-    lat: 47.1230, lng: -122.5560, area: "Lake",
+    lat: 47.1170, lng: -122.5650, area: "Lake",
     species: ["Stocked rainbow", "Kokanee", "Smallmouth"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -668,7 +668,7 @@ WF.SPOTS = [
   // ============ STRAIT & OLYMPIC PENINSULA ============
   {
     id: "ediz-hook", name: "Ediz Hook (Port Angeles)", fishery: "salt", region: "peninsula",
-    area: "MA 6", lat: 48.1400, lng: -123.4090,
+    area: "MA 6", lat: 48.1385, lng: -123.4150,
     species: ["Coho (Aug–Sep)", "Blackmouth", "Halibut (May days, nearby)"],
     months: [2,3,5,7,8,9,10], prime: [8,9],
     tides: ["incoming","outgoing"], shelter: ["S","SW"],
@@ -680,7 +680,7 @@ WF.SPOTS = [
   },
   {
     id: "freshwater-bay", name: "Freshwater Bay", fishery: "salt", region: "peninsula",
-    area: "MA 6", lat: 48.1480, lng: -123.5950,
+    area: "MA 6", lat: 48.1520, lng: -123.5950,
     species: ["Chinook/Coho (summer)", "Halibut (May days)", "Lingcod (in season)"],
     months: [3,5,6,7,8,9], prime: [7,8],
     tides: ["outgoing","incoming"], shelter: ["S","SW","SE"],
@@ -692,7 +692,7 @@ WF.SPOTS = [
   },
   {
     id: "sekiu", name: "Sekiu (Clallam Bay)", fishery: "salt", region: "peninsula",
-    area: "MA 5", lat: 48.2630, lng: -124.3000,
+    area: "MA 5", lat: 48.2680, lng: -124.2950,
     species: ["Chinook/Coho (summer)", "Halibut (May)", "Lingcod"],
     months: [3,5,6,7,8,9], prime: [7,8],
     tides: ["incoming","outgoing"], shelter: ["S","SE"],
@@ -704,7 +704,7 @@ WF.SPOTS = [
   },
   {
     id: "neah-bay", name: "Neah Bay (Makah)", fishery: "coast", region: "peninsula",
-    area: "MA 4", lat: 48.3680, lng: -124.6240,
+    area: "MA 4", lat: 48.3720, lng: -124.6150,
     species: ["Lingcod", "Halibut (May–Jun days)", "Chinook/Coho", "Black rockfish"],
     months: [4,5,6,7,8,9], prime: [6,7,8],
     tides: ["high slack","incoming"], shelter: ["S","SW"],
@@ -716,7 +716,7 @@ WF.SPOTS = [
   },
   {
     id: "la-push", name: "La Push / Quillayute", fishery: "coast", region: "coast",
-    area: "MA 3", lat: 47.9090, lng: -124.6370,
+    area: "MA 3", lat: 47.9050, lng: -124.6650,
     species: ["Coho (river mouth, Oct)", "Lingcod/Halibut (offshore days)", "Surfperch"],
     months: [5,6,7,8,9,10], prime: [9,10],
     tides: ["incoming"], shelter: ["E"],
@@ -775,7 +775,7 @@ WF.SPOTS = [
   // ============ COAST ============
   {
     id: "westport-jetty", name: "Westport Jetty & Marina", fishery: "coast", region: "coast",
-    area: "MA 2", lat: 46.9080, lng: -124.1430,
+    area: "MA 2", lat: 46.9080, lng: -124.1700,
     species: ["Black rockfish", "Lingcod", "Surfperch", "Salmon (Aug, nearby)"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6,7,8],
     tides: ["incoming","high slack"], shelter: ["E","NE"],
@@ -787,7 +787,7 @@ WF.SPOTS = [
   },
   {
     id: "ocean-shores-surf", name: "Ocean Shores Surf & North Jetty", fishery: "coast", region: "coast",
-    area: "MA 2-2", lat: 46.9210, lng: -124.1730,
+    area: "MA 2", lat: 46.9210, lng: -124.1800,
     species: ["Redtail surfperch", "Razor clams (announced digs)"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6,7],
     tides: ["incoming"], shelter: [],
@@ -810,7 +810,7 @@ WF.SPOTS = [
   },
   {
     id: "willapa-bay", name: "Willapa Bay", fishery: "coast", region: "coast",
-    area: "MA 2-1", lat: 46.7080, lng: -123.8500,
+    area: "MA 2-1", lat: 46.6800, lng: -123.9800,
     species: ["Fall chinook (Aug–Sep)", "Coho (Sep–Oct)", "Crab"],
     months: [8,9,10], prime: [9],
     tides: ["incoming","high slack"], shelter: ["N","E"],
@@ -822,7 +822,7 @@ WF.SPOTS = [
   },
   {
     id: "buoy-10", name: "Buoy 10 (Columbia mouth)", fishery: "coast", region: "coast",
-    area: "MA 1", lat: 46.2500, lng: -124.0300,
+    area: "MA 1", lat: 46.2550, lng: -124.0300,
     species: ["Chinook (Aug)", "Coho (Aug–Sep)"],
     months: [8,9], prime: [8],
     tides: ["incoming","high slack"], shelter: [],
@@ -834,7 +834,7 @@ WF.SPOTS = [
   },
   {
     id: "long-beach-surf", name: "Long Beach Peninsula Surf", fishery: "coast", region: "coast",
-    area: "MA 1", lat: 46.3500, lng: -124.0640,
+    area: "MA 1", lat: 46.3500, lng: -124.0700,
     species: ["Redtail surfperch", "Razor clams (announced digs)"],
     months: [3,4,5,6,7,8,9], prime: [5,6,7],
     tides: ["incoming"], shelter: [],
