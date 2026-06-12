@@ -1,0 +1,16 @@
+{
+  "name": "WA Fish",
+  "short_name": "WA Fish",
+  "description": "Personal Washington fishing app — spots, tides, wind, flows, regs.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1d2e",
+  "theme_color": "#0b1d2e",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>WA Fish</title>
+  <meta name="theme-color" content="#0b1d2e">
+  <meta name="description" content="Personal Washington fishing conditions app — spots, tides, wind, flows, regs.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="header">
+    <h1>WA <span>Fish</span></h1>
+    <span class="age" id="data-age">…</span>
+    <button id="refresh-btn" title="Refresh conditions">⟳</button>
+  </header>
+
+  <div id="map-filters">
+    <span class="chip on" data-f="all">All</span>
+    <span class="chip" data-f="kayak">🛶 Kayak</span>
+    <span class="chip" data-f="salt">Salt</span>
+    <span class="chip" data-f="coast">Coast</span>
+    <span class="chip" data-f="river">Rivers</span>
+    <span class="chip" data-f="lake">Lakes</span>
+  </div>
+
+  <main>
+    <section class="view active" id="view-map">
+      <div id="map"></div>
+    </section>
+
+    <section class="view" id="view-fishnow">
+      <div id="fishnow-list"></div>
+    </section>
+
+    <section class="view" id="view-tides">
+      <select id="tide-station"></select>
+      <div id="tide-content"></div>
+    </section>
+
+    <section class="view" id="view-regs">
+      <div id="regs-content"></div>
+    </section>
+  </main>
+
+  <div id="sheet-backdrop"></div>
+  <div id="sheet"><div class="sheet-body"></div></div>
+
+  <nav id="nav">
+    <button data-tab="map" class="on"><span class="ico">🗺️</span>Map</button>
+    <button data-tab="fishnow"><span class="ico">🎣</span>Fish Now</button>
+    <button data-tab="tides"><span class="ico">🌊</span>Tides</button>
+    <button data-tab="regs"><span class="ico">📖</span>Regs</button>
+  </nav>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data/spots.js"></script>
+  <script src="data/regs.js"></script>
+  <script src="js/conditions.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/tidechart.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
