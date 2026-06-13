@@ -49,6 +49,8 @@ WF.app = (function () {
     });
     document.getElementById("refresh-btn").addEventListener("click", refresh);
     document.getElementById("ma-toggle").addEventListener("click", function () { WF.map.toggleMA(); });
+    document.getElementById("map-back").addEventListener("click", function () { WF.map.deselect(); });
+    WF.bodies.build();
     document.getElementById("sheet-backdrop").addEventListener("click", WF.ui.closeSheet);
 
     // load cache, paint immediately, then refresh if online

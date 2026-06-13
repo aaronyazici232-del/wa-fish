@@ -3,7 +3,7 @@
 // Map tiles: cache-first with a size cap so viewed areas work offline.
 // API calls (NOAA/Open-Meteo/USGS): network only — the app keeps its own
 // last-good copy in localStorage, so the SW stays out of the way.
-var VERSION = "wafish-v2";
+var VERSION = "wafish-v3";
 var SHELL = VERSION + "-shell";
 var TILES = VERSION + "-tiles";
 var TILE_CAP = 600;
@@ -11,8 +11,9 @@ var TILE_CAP = 600;
 var SHELL_FILES = [
   "./", "index.html", "manifest.webmanifest",
   "css/style.css",
-  "data/spots.js", "data/regs.js", "data/marine_areas.js",
-  "js/conditions.js", "js/scoring.js", "js/tidechart.js", "js/map.js", "js/ui.js", "js/app.js",
+  "data/spots.js", "data/regs.js", "data/marine_areas.js", "data/species.js",
+  "js/fishart.js", "js/conditions.js", "js/scoring.js", "js/waterbodies.js",
+  "js/tidechart.js", "js/map.js", "js/ui.js", "js/app.js",
   "icons/icon-192.png", "icons/icon-512.png",
   "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
   "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
