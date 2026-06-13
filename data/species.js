@@ -214,6 +214,56 @@ WF.SPECIES = [
     bait: "Shrimp pieces, mussels",
     guide: "Kelp and rock in 10–40 ft — Washington Park, Fort Casey, Neah Bay. Aggressive little biters that save a slow lingcod day, and a legal live greenling is the best lingcod bait there is (where allowed). Light gear fun from the kayak.",
     regs: "Counts in the bottomfish limit. Puget Sound bottomfish rules apply — check the area."
+  },
+  {
+    id: "walleye", name: "Walleye", aka: "Columbia Basin prize",
+    keywords: ["walleye"],
+    months: [4, 5, 6, 7, 8, 9, 10],
+    art: { shape: "perch", back: "#5a5a2e", side: "#bcab5e", belly: "#efe9cf", barsV: true, spots: true },
+    lures: "Bottom-bouncer + spinner/worm harness, blade baits, jigs tipped with plastics or a crawler",
+    bait: "Nightcrawler on a slow-death hook or harness; live minnow where legal",
+    guide: "Troll harnesses slowly (1.0–1.5 mph) along 12–30 ft breaklines, points, and flats, dragging bottom — they bite light, so watch for a subtle weight change. Low light (dawn, dusk, after dark) brings them shallow; midday they slide deeper. The 4cv earns its keep: find the breakline and stay glued to it.",
+    regs: "Columbia Basin lakes (Moses, Potholes, Banks, Roosevelt) carry liberal or no limits to encourage harvest — check the lake listing. Freshwater license."
+  },
+  {
+    id: "crappie", name: "Black Crappie", aka: "",
+    keywords: ["crappie"],
+    months: [4, 5, 6, 9, 10],
+    art: { shape: "bass", back: "#5b616a", side: "#c2cdd6", belly: "#eef3f6", spots: true },
+    lures: "1/16–1/32 oz marabou or tube jigs, tiny swimbaits, micro spinners — under a float",
+    bait: "Live minnow under a slip-float, the timeless crappie rig",
+    guide: "Find brush, docks, and drowned timber in 6–20 ft. Crappie school tight and suspend — hang a jig or minnow right at their level under a float and barely move it. Pre-spawn spring fish stack in shallow cover; dawn and dusk are best. A suspended cloud on the sonar IS the school — pick it apart.",
+    regs: "Often 25/day with a 9\" minimum, but limits vary a lot by lake — check the listing. Freshwater license."
+  },
+  {
+    id: "mackinaw", name: "Lake Trout (Mackinaw)", aka: "Lake Chelan's deep-water giant",
+    keywords: ["mackinaw", "lake trout"],
+    months: [3, 4, 5, 10, 11],
+    art: { shape: "salmon", back: "#37423b", side: "#9fb0a6", belly: "#e8eee9", spots: true },
+    lures: "Heavy jigging spoons (1–3 oz) worked vertically, or troll flashers + squid deep on a downrigger",
+    bait: "Tip jigs with a strip of sucker or kokanee meat where legal",
+    guide: "A deep, cold char — often 80–200+ ft. Vertical-jig over humps and drop-offs, or troll right on the bottom with a downrigger. Spring and fall they push shallower; summer they're deep. Pure sonar fishing — if you can't mark them, move.",
+    regs: "Lake Chelan and Roosevelt encourage harvest (liberal limits) to protect kokanee. Check the lake listing."
+  },
+  {
+    id: "bulltrout", name: "Bull Trout / Dolly Varden", aka: "Native char — usually catch & release",
+    keywords: ["bull trout", "dolly"],
+    months: [6, 7, 8, 9, 10, 11],
+    art: { shape: "salmon", back: "#3c5a52", side: "#a7b8b0", belly: "#eef2ef", spots: true, slash: "#e0a04a" },
+    lures: "Big streamers, large spoons, and plugs — bull trout eat other fish",
+    bait: "Not needed (and usually illegal where they live)",
+    guide: "Aggressive native char holding in cold, deep river pools and at lake inlets, ambushing smaller fish. Swing big flies or throw spoons through deep slots and tailouts. Mostly an exciting by-catch of trout and steelhead fishing.",
+    regs: "RELEASE required in most waters (ESA-listed). A few lakes/rivers allow a limited season — verify before ever targeting them. Never assume open."
+  },
+  {
+    id: "catfish", name: "Channel Catfish", aka: "",
+    keywords: ["catfish", "channel cat"],
+    months: [5, 6, 7, 8, 9],
+    art: { shape: "ling", back: "#4a443a", side: "#8c8472", belly: "#e6e0d2", spots: false },
+    lures: "Not a lure fish — scent is everything",
+    bait: "Nightcrawler gobs, chicken liver, cut bait, or stink bait on a slip-sinker rig",
+    guide: "An evening-and-night fishery. Cast cut bait or a crawler gob onto flats and channel edges 8–25 ft, prop the rod up, and wait — catfish follow scent to the bait. Moses, Potholes, and Silver Lake (Cowlitz) have strong numbers. Warm summer nights are prime.",
+    regs: "Usually 5/day, no minimum size, on most lakes — check the listing. Freshwater license."
   }
 ];
 

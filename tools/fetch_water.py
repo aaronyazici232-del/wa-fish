@@ -17,6 +17,18 @@ LAKES = [
     ("wb-lake-stevens", "Lake Stevens", 48.015, -122.064, 0.04, True),
     ("wb-american-lake", "American Lake", 47.123, -122.566, 0.04, True),
     ("wb-lake-cushman", "Lake Cushman", 47.50, -123.22, 0.10, True),
+    ("wb-lake-tapps", "Lake Tapps", 47.233, -122.178, 0.05, True),
+    ("wb-lake-sawyer", "Lake Sawyer", 47.345, -122.044, 0.03, True),
+    ("wb-lake-goodwin", "Lake Goodwin", 48.132, -122.290, 0.03, True),
+    ("wb-silver-lake-cowlitz", "Silver Lake", 46.317, -122.820, 0.06, True),
+    ("wb-lake-whatcom", "Lake Whatcom", 48.71, -122.33, 0.10, True),
+    ("wb-lake-padden", "Lake Padden", 48.701, -122.435, 0.02, True),
+    ("wb-lake-crescent", "Lake Crescent", 48.07, -123.80, 0.10, True),
+    ("wb-lake-wenatchee", "Lake Wenatchee", 47.81, -120.78, 0.07, True),
+    ("wb-moses-lake", "Moses Lake", 47.13, -119.29, 0.14, True),
+    ("wb-potholes-reservoir", "Potholes Reservoir", 46.98, -119.33, 0.14, True),
+    ("wb-banks-lake", "Banks Lake", 47.85, -119.18, 0.22, True),
+    ("wb-lake-chelan", "Lake Chelan", 48.05, -120.30, 0.45, True),
 ]
 RIVERS = [
     ("wb-green-river", "Green River", 47.30, -122.22, 0.10),
@@ -33,6 +45,19 @@ RIVERS = [
     ("wb-dungeness-river", "Dungeness River", 48.05, -123.13, 0.10),
     ("wb-chehalis-river", "Chehalis River", 46.95, -123.30, 0.14),
     ("wb-cowlitz-river", "Cowlitz River", 46.52, -122.60, 0.14),
+    ("wb-snoqualmie-river", "Snoqualmie River", 47.65, -121.91, 0.14),
+    ("wb-cedar-river", "Cedar River", 47.46, -122.12, 0.10),
+    ("wb-sauk-river", "Sauk River", 48.42, -121.57, 0.14),
+    ("wb-nooksack-river", "Nooksack River", 48.78, -122.45, 0.16),
+    ("wb-wynoochee-river", "Wynoochee River", 47.10, -123.59, 0.12),
+    ("wb-satsop-river", "Satsop River", 47.00, -123.49, 0.10),
+    ("wb-humptulips-river", "Humptulips River", 47.23, -123.96, 0.14),
+    ("wb-queets-river", "Queets River", 47.54, -124.30, 0.16),
+    ("wb-elwha-river", "Elwha River", 48.10, -123.56, 0.10),
+    ("wb-methow-river", "Methow River", 48.36, -120.12, 0.18),
+    ("wb-yakima-river", "Yakima River", 47.00, -120.55, 0.22),
+    ("wb-klickitat-river", "Klickitat River", 45.85, -121.18, 0.18),
+    ("wb-nf-lewis-river", "Lewis River", 45.98, -122.55, 0.14),
 ]
 
 

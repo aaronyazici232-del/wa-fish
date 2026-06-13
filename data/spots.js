@@ -864,6 +864,285 @@ WF.SPOTS = [
     launch: "Blue Creek/barrier dam bank fishery; dam-controlled flows make it fishable when everything else blows out.",
     depth: "—", sonar: "—",
     notes: "The highest-volume hatchery river in SW Washington — something is usually in."
+  },
+
+  // ================= MORE LAKES (statewide) =================
+  {
+    id: "lake-tapps", name: "Lake Tapps", fishery: "lake", region: "south",
+    lat: 47.2330, lng: -122.1780, area: "Lake",
+    species: ["Smallmouth bass", "Largemouth bass", "Kokanee", "Yellow perch", "Rainbow trout"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,7],
+    access: ["kayak","bank"],
+    launch: "County ramps (North Tapps, Allan Yorke Park). Big developed reservoir — busy with ski boats midday, so fish early.",
+    depth: "Drawdown reservoir: rocky points and old roadbeds 10–30 ft hold bass; kokanee suspend over the deep basin.",
+    sonar: "ClearVü the points and humps for bass structure; kokanee show as a band over 40–60 ft.",
+    notes: "Best smallmouth water in the South Sound suburbs, plus a solid kokanee troll."
+  },
+  {
+    id: "lake-sawyer", name: "Lake Sawyer", fishery: "lake", region: "central",
+    lat: 47.3450, lng: -122.0440, area: "Lake",
+    species: ["Largemouth bass", "Smallmouth bass", "Kokanee", "Yellow perch", "Rainbow trout"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,9],
+    access: ["kayak","bank"],
+    launch: "County ramp on the north end. Residential lake, no-wake stretches make it kayak-friendly.",
+    depth: "Weedy bays and dock rows for largemouth 5–15 ft; rocky points for smallmouth; kokanee in the deep hole.",
+    sonar: "Edge the weedlines and docks; the kokanee band sits over the basin.",
+    notes: "Black Diamond's best bass-and-kokanee combo lake."
+  },
+  {
+    id: "lake-goodwin", name: "Lake Goodwin", fishery: "lake", region: "north",
+    lat: 48.1320, lng: -122.2900, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Cutthroat"],
+    months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
+    access: ["kayak","bank"],
+    launch: "State Wildlife ramp on the west shore (Discover Pass).",
+    depth: "Gentle bowl; stocked trout cruise 8–20 ft, bass on the weedy north and south ends.",
+    sonar: "Troll until you mark the trout school, then stay on the depth.",
+    notes: "Heavily stocked year-round lowland lake north of Everett — great spring trout."
+  },
+  {
+    id: "silver-lake-cowlitz", name: "Silver Lake (Cowlitz)", fishery: "lake", region: "sw",
+    lat: 46.3170, lng: -122.8200, area: "Lake",
+    species: ["Largemouth bass", "Black crappie", "Yellow perch", "Channel catfish", "Rainbow trout"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,7],
+    access: ["kayak","bank"],
+    launch: "Streeter's Resort and county access off Hwy 504 toward Mt. St. Helens.",
+    depth: "Shallow, weedy, stumpy — classic largemouth factory. Most water under 10 ft with thick lily pads.",
+    sonar: "ClearVü picks out the stump fields and pad edges; crappie suspend off the deeper timber.",
+    notes: "One of Washington's premier largemouth and crappie lakes. Frog-and-pad fishing in summer."
+  },
+  {
+    id: "lake-whatcom", name: "Lake Whatcom", fishery: "lake", region: "north",
+    lat: 48.7100, lng: -122.3300, area: "Lake",
+    species: ["Kokanee", "Smallmouth bass", "Cutthroat", "Yellow perch"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6,7],
+    access: ["kayak","bank"],
+    launch: "Bloedel-Donovan Park ramp on the north basin (Bellingham).",
+    depth: "Deep glacial lake; kokanee 30–70 ft, smallmouth on the rocky shorelines and points 10–25 ft.",
+    sonar: "Made for the 4cv: find the kokanee band over the deep basin, or pick rock from sand on the smallmouth shores.",
+    notes: "Bellingham's big kokanee and smallmouth lake."
+  },
+  {
+    id: "lake-padden", name: "Lake Padden", fishery: "lake", region: "north",
+    lat: 48.7010, lng: -122.4350, area: "Lake",
+    species: ["Rainbow trout", "Cutthroat", "Largemouth bass"],
+    months: [3,4,5,6,9,10,11], prime: [4,5,10],
+    access: ["kayak","bank"],
+    launch: "Padden Park ramp; no gas motors — quiet kayak lake.",
+    depth: "Small deep bowl; trout suspend 10–25 ft.",
+    sonar: "Troll for the suspended trout; circle back through hookups.",
+    notes: "Heavily stocked Bellingham city lake including some big triploids."
+  },
+  {
+    id: "lake-crescent", name: "Lake Crescent", fishery: "lake", region: "peninsula",
+    lat: 48.0700, lng: -123.8000, area: "Lake",
+    species: ["Beardslee rainbow (C&R)", "Crescenti cutthroat (C&R)"],
+    months: [5,6,7,8,9,10], prime: [6,7,9],
+    access: ["kayak","bank"],
+    launch: "Storm King / Lake Crescent Lodge area in Olympic National Park. Stunning, very deep, very clear.",
+    depth: "Gin-clear and up to 600+ ft. The unique Beardslee/Crescenti trout cruise the drop-offs and ride deep in summer.",
+    sonar: "Troll the shoreline breaks; these fish suspend and roam — cover water.",
+    notes: "Special regs: artificial lures, single barbless, CATCH-AND-RELEASE only, no bait. A bucket-list trout."
+  },
+  {
+    id: "lake-wenatchee", name: "Lake Wenatchee", fishery: "lake", region: "east",
+    lat: 47.8100, lng: -120.7800, area: "Lake",
+    species: ["Sockeye (when open)", "Kokanee", "Bull trout (C&R)"],
+    months: [5,6,7,8,9], prime: [7,8],
+    access: ["kayak","boat"],
+    launch: "State Park ramp at the south end (Discover Pass).",
+    depth: "Glacial lake; sockeye/kokanee school 30–60 ft over the basin.",
+    sonar: "Sonar fishery — locate the school and troll a dodger/squid through it.",
+    notes: "Summer sockeye season opens only in strong-return years (announced). Otherwise a kokanee troll."
+  },
+  {
+    id: "moses-lake", name: "Moses Lake", fishery: "lake", region: "east",
+    lat: 47.1300, lng: -119.2900, area: "Lake",
+    species: ["Walleye", "Smallmouth bass", "Largemouth bass", "Black crappie", "Yellow perch", "Channel catfish"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,9],
+    access: ["kayak","bank"],
+    launch: "Several ramps (Cascade Park, Connelly Park, Blue Heron). Sprawling desert lake — wind comes up fast in the afternoon.",
+    depth: "Shallow weedy arms, rocky points, and dredged channels 6–25 ft. Walleye work the breaklines, bass the weedlines.",
+    sonar: "ClearVü the channel edges and humps for walleye; mark crappie schools off the deeper docks and timber.",
+    notes: "The Columbia Basin's premier multi-species lake — walleye, bass, crappie, perch, cats all in one. ~3.5 hr drive."
+  },
+  {
+    id: "potholes-reservoir", name: "Potholes Reservoir", fishery: "lake", region: "east",
+    lat: 46.9800, lng: -119.3300, area: "Lake",
+    species: ["Walleye", "Largemouth bass", "Smallmouth bass", "Black crappie", "Yellow perch"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","boat"],
+    launch: "MarDon Resort and the state park ramps. The 'dunes' (sand islands) on the north end are a maze — GPS helps.",
+    depth: "The flooded sand dunes create endless shallow bass structure; walleye on the main-lake flats and faceslope of the dam.",
+    sonar: "Mark the dune edges and drowned willows; walleye on the deeper flats near the dam.",
+    notes: "Legendary bass-and-walleye fishery. The dunes are kayak heaven but easy to get lost in."
+  },
+  {
+    id: "banks-lake", name: "Banks Lake", fishery: "lake", region: "east",
+    lat: 47.8500, lng: -119.1700, area: "Lake",
+    species: ["Walleye", "Smallmouth bass", "Kokanee", "Yellow perch", "Largemouth bass"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,9],
+    access: ["kayak","boat"],
+    launch: "Coulee City and Steamboat Rock ramps. Big basalt-walled reservoir between the coulee cliffs.",
+    depth: "Rocky points, basalt walls, and rockslides for smallmouth; walleye on the gravel flats; kokanee deep.",
+    sonar: "Smallmouth glued to the rock 8–25 ft; walleye on the flats; the 4cv sorts rock from sand.",
+    notes: "Arguably the state's best smallmouth lake, with a strong walleye fishery. Steamboat Rock is a scenic kayak base."
+  },
+  {
+    id: "lake-chelan", name: "Lake Chelan (lower basin)", fishery: "lake", region: "east",
+    lat: 47.8550, lng: -120.0200, area: "Lake",
+    species: ["Kokanee", "Lake trout (mackinaw)", "Cutthroat", "Smallmouth bass"],
+    months: [3,4,5,6,7,8,9,10,11], prime: [4,5,10],
+    access: ["kayak","boat"],
+    launch: "Don Morse Park and Lakeside ramps in Chelan (south end). The lake is 50 mi long and very deep — stay near the lower basin in a kayak.",
+    depth: "Kokanee 30–80 ft; lake trout (mackinaw) deep on the humps 80–200 ft; smallmouth on the lower-basin rock.",
+    sonar: "A true sonar lake: kokanee bands, mackinaw on deep structure, smallmouth on the shoreline rock.",
+    notes: "Spring kokanee and mackinaw are the draw. Open water can build dangerous chop — kayak the protected lower end only."
+  },
+
+  // ================= MORE RIVERS (statewide) =================
+  {
+    id: "snoqualmie-river", name: "Snoqualmie River", fishery: "river", region: "central",
+    lat: 47.6520, lng: -121.9100, area: "Snoqualmie R.",
+    species: ["Trout (C&R upper)", "Coho (Sep–Oct)", "Pink (odd years)", "Whitefish (winter)"],
+    months: [6,7,8,9,10,11], prime: [9,10],
+    gauge: "12149000", flow: { good: [800, 4000], high: 7000 },
+    access: ["bank","kayak"],
+    launch: "Bank and float access around Fall City, Carnation, and Duvall. Below the falls is the salmon water.",
+    depth: "—", sonar: "—",
+    notes: "Close-to-Seattle trout and fall salmon. Above Snoqualmie Falls is a wild-trout, selective-gear fishery."
+  },
+  {
+    id: "cedar-river", name: "Cedar River", fishery: "river", region: "central",
+    lat: 47.4640, lng: -122.1250, area: "Cedar R.",
+    species: ["Sockeye (rare openings)", "Coho (Oct–Nov)", "Trout (C&R)"],
+    months: [9,10,11], prime: [10],
+    gauge: "12119000", flow: { good: [150, 700], high: 1200 },
+    access: ["bank"],
+    launch: "Bank access through Renton (Cedar River Trail) and Maple Valley.",
+    depth: "—", sonar: "—",
+    notes: "Mostly trout C&R; the famous sockeye run only opens in rare big years. Check rules — much is closed to protect spawners."
+  },
+  {
+    id: "sauk-river", name: "Sauk River", fishery: "river", region: "north",
+    lat: 48.4200, lng: -121.5700, area: "Sauk R.",
+    species: ["Wild steelhead (C&R, when open)", "Coho (Oct–Nov)", "Pink (odd years)", "Bull trout (C&R)"],
+    months: [3,4,9,10,11], prime: [3,10],
+    gauge: "12189500", flow: { good: [2000, 7000], high: 12000 },
+    access: ["bank","kayak"],
+    launch: "Large Skagit tributary; drift-boat and bank water around Darrington and the forks.",
+    depth: "—", sonar: "—",
+    notes: "Iconic wild-steelhead water — the spring C&R season opens only when the Skagit/Sauk forecast clears the threshold."
+  },
+  {
+    id: "nooksack-river", name: "Nooksack River", fishery: "river", region: "north",
+    lat: 48.7800, lng: -122.4500, area: "Nooksack R.",
+    species: ["Chinook (Sep)", "Coho (Oct–Nov)", "Chum (Nov–Dec)", "Pink (odd years)"],
+    months: [9,10,11,12], prime: [10,11],
+    gauge: "12213100", flow: { good: [1500, 6000], high: 12000 },
+    access: ["bank"],
+    launch: "Bank access around Ferndale, Everson, and the forks. Glacial — clears as it drops and cools.",
+    depth: "—", sonar: "—",
+    notes: "Whatcom County's main salmon river. Big chum run late fall; co-managed with the Nooksack/Lummi."
+  },
+  {
+    id: "wynoochee-river", name: "Wynoochee River", fishery: "river", region: "coast",
+    lat: 47.1000, lng: -123.5900, area: "Wynoochee R.",
+    species: ["Coho (Oct–Nov)", "Winter steelhead (Dec–Feb)", "Chinook (Sep–Oct)"],
+    months: [1,2,9,10,11,12], prime: [11,12],
+    gauge: "12037400", flow: { good: [300, 1500], high: 3000 },
+    access: ["bank","kayak"],
+    launch: "Chehalis-system tributary; bank and drift access north of Montesano.",
+    depth: "—", sonar: "—",
+    notes: "Dam-controlled upper flows make it fishable when other coastal rivers blow out."
+  },
+  {
+    id: "satsop-river", name: "Satsop River", fishery: "river", region: "coast",
+    lat: 47.0000, lng: -123.4900, area: "Satsop R.",
+    species: ["Coho (Oct–Nov)", "Winter steelhead (Dec–Feb)", "Chinook (Sep–Oct)"],
+    months: [1,2,9,10,11,12], prime: [11,12,1],
+    gauge: "12035000", flow: { good: [400, 2500], high: 5000 },
+    access: ["bank","kayak"],
+    launch: "Popular bank and drift water off Hwy 12 near Satsop; the forks above are productive.",
+    depth: "—", sonar: "—",
+    notes: "One of the most popular salmon/steelhead rivers in Grays Harbor — gets crowded on a good bite."
+  },
+  {
+    id: "humptulips-river", name: "Humptulips River", fishery: "river", region: "coast",
+    lat: 47.2300, lng: -123.9600, area: "Humptulips R.",
+    species: ["Coho (Oct–Nov)", "Winter steelhead (Dec–Feb)", "Chinook (Oct)"],
+    months: [1,2,10,11,12], prime: [11,12],
+    gauge: "12039005", flow: { good: [400, 2000], high: 4500 },
+    access: ["bank","kayak"],
+    launch: "Bank and drift access off Hwy 101 north of Hoquiam.",
+    depth: "—", sonar: "—",
+    notes: "Strong wild and hatchery steelhead returns; classic coastal float."
+  },
+  {
+    id: "queets-river", name: "Queets River", fishery: "river", region: "coast",
+    lat: 47.5400, lng: -124.3000, area: "Queets R.",
+    species: ["Winter steelhead (Dec–Mar)", "Coho (Oct–Nov)", "Bull trout (C&R)"],
+    months: [1,2,3,10,11,12], prime: [1,2,3],
+    gauge: "12040500", flow: { good: [800, 3000], high: 6000 },
+    access: ["bank","kayak"],
+    launch: "Remote OP river; lower river outside the park has bank/drift access. Glacial — fishes best greening up as it drops.",
+    depth: "—", sonar: "—",
+    notes: "Big wild steelhead water. Upper river is Olympic National Park; rules differ — verify boundaries and emergency rules."
+  },
+  {
+    id: "elwha-river", name: "Elwha River", fishery: "river", region: "peninsula",
+    lat: 48.1000, lng: -123.5600, area: "Elwha R.",
+    species: ["Salmon & steelhead (recovering)"],
+    months: [], prime: [],
+    gauge: "12045500", flow: { good: [400, 1800], high: 3500 },
+    access: ["bank"],
+    launch: "Near Port Angeles. Historic river, dams removed 2014 — runs are rebuilding.",
+    depth: "—", sonar: "—",
+    notes: "Largely CLOSED to fishing while salmon/steelhead recover post-dam-removal. Listed for awareness — check WDFW before any trip; assume closed."
+  },
+  {
+    id: "methow-river", name: "Methow River", fishery: "river", region: "east",
+    lat: 48.3600, lng: -120.1200, area: "Methow R.",
+    species: ["Summer steelhead (C&R/selective, fall)", "Trout (C&R)", "Whitefish"],
+    months: [9,10,11], prime: [10,11],
+    gauge: "12449500", flow: { good: [600, 2500], high: 4000 },
+    access: ["bank"],
+    launch: "Beautiful eastside river through Twisp and Winthrop. Steelhead season is announced each fall by quota.",
+    depth: "—", sonar: "—",
+    notes: "When the steelhead fishery opens (some years), swing flies and jigs through the runs. Verify the season — it's not automatic."
+  },
+  {
+    id: "yakima-river", name: "Yakima River (Canyon)", fishery: "river", region: "east",
+    lat: 47.0000, lng: -120.5500, area: "Yakima R.",
+    species: ["Rainbow trout (C&R)", "Cutthroat (C&R)", "Whitefish"],
+    months: [3,4,5,6,7,8,9,10,11], prime: [5,6,9,10],
+    gauge: "12479500", flow: { good: [1200, 4000], high: 6500 },
+    access: ["bank","kayak"],
+    launch: "The Canyon between Ellensburg and the Roza dam — blue-ribbon trout water, floated or waded.",
+    depth: "—", sonar: "—",
+    notes: "Washington's premier trout river: wild rainbows and cutts, CATCH-AND-RELEASE, selective gear. Watch the 'flip-flop' irrigation flows."
+  },
+  {
+    id: "klickitat-river", name: "Klickitat River", fishery: "river", region: "east",
+    lat: 45.8500, lng: -121.1800, area: "Klickitat R.",
+    species: ["Summer/fall steelhead (Aug–Nov)", "Fall chinook (Sep–Oct)", "Coho (Oct)"],
+    months: [8,9,10,11], prime: [9,10],
+    gauge: "14113000", flow: { good: [600, 2500], high: 4500 },
+    access: ["bank"],
+    launch: "Columbia tributary north of Lyle. Glacial — runs murky in summer heat, clears in fall.",
+    depth: "—", sonar: "—",
+    notes: "Productive steelhead and salmon river; the lower river near the mouth fishes when the main stem is high."
+  },
+  {
+    id: "nf-lewis-river", name: "NF Lewis River", fishery: "river", region: "sw",
+    lat: 45.9800, lng: -122.5500, area: "Lewis R.",
+    species: ["Spring chinook (Apr–Jun)", "Summer steelhead (Jun–Aug)", "Coho (Oct–Nov)", "Winter steelhead (Dec–Feb)"],
+    months: [1,2,4,5,6,7,8,10,11,12], prime: [5,6,11],
+    gauge: "14220500", flow: { good: [1500, 5000], high: 8000 },
+    access: ["bank","boat"],
+    launch: "Below Merwin Dam near Woodland/Ariel. Dam-controlled flows keep it fishable year-round.",
+    depth: "—", sonar: "—",
+    notes: "SW Washington workhorse — strong hatchery returns of springers, summer steelhead, and coho."
   }
 ];
 

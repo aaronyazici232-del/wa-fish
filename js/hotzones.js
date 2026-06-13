@@ -15,9 +15,14 @@ WF.hotzones = (function () {
     cutthroat:   { inlet: 0.78, point: 0.70, dropoff: 0.66, deep: 0.60, flat: 0.46, dock: 0.46, weed: 0.36 },
     kokanee:     { deep: 0.95, dropoff: 0.52, inlet: 0.36, point: 0.22, flat: 0.20, weed: 0.12, dock: 0.12 },
     sockeye:     { deep: 0.92, dropoff: 0.44, inlet: 0.50, point: 0.20, flat: 0.20, weed: 0.12, dock: 0.12 },
-    rainbow:     { flat: 0.72, inlet: 0.66, dock: 0.62, deep: 0.52, point: 0.46, dropoff: 0.46, weed: 0.42 }
+    rainbow:     { flat: 0.72, inlet: 0.66, dock: 0.62, deep: 0.52, point: 0.46, dropoff: 0.46, weed: 0.42 },
+    walleye:     { dropoff: 0.90, point: 0.80, flat: 0.62, deep: 0.60, inlet: 0.50, dock: 0.48, weed: 0.40 },
+    crappie:     { dock: 0.90, weed: 0.85, inlet: 0.60, dropoff: 0.55, flat: 0.50, point: 0.40, deep: 0.35 },
+    mackinaw:    { deep: 0.95, dropoff: 0.70, point: 0.35, inlet: 0.30, flat: 0.20, weed: 0.12, dock: 0.12 },
+    bulltrout:   { inlet: 0.82, deep: 0.62, dropoff: 0.60, point: 0.55, flat: 0.35, dock: 0.30, weed: 0.20 },
+    catfish:     { flat: 0.80, weed: 0.72, inlet: 0.66, dock: 0.60, dropoff: 0.46, deep: 0.40, point: 0.30 }
   };
-  var WARMWATER = { yellowperch: 1, smallmouth: 1, largemouth: 1, bass: 1 };
+  var WARMWATER = { yellowperch: 1, smallmouth: 1, largemouth: 1, bass: 1, crappie: 1, catfish: 1 };
 
   function weight(spId, type) {
     var w = HAB[spId];
@@ -47,8 +52,13 @@ WF.hotzones = (function () {
   // auto-zones from a lake's real polygon when not hand-curated
   function autoZones(body) {
     var shape = WF.WATER_SHAPES && WF.WATER_SHAPES[body.id];
-    if (!shape || shape.type !== "Polygon") return [];
-    var ring = shape.coordinates[0];
+    if (!shape) return [];
+    var ring;
+    if (shape.type === "Polygon") ring = shape.coordinates[0];
+    else if (shape.type === "MultiPolygon") {
+      ring = shape.coordinates.map(function (p) { return p[0]; })
+        .sort(function (a, b) { return b.length - a.length; })[0]; // largest body
+    } else return [];
     var cx = 0, cy = 0, minx = 1e9, maxx = -1e9, miny = 1e9, maxy = -1e9;
     ring.forEach(function (p) {
       cx += p[0]; cy += p[1];
