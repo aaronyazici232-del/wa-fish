@@ -87,15 +87,17 @@ WF.ui = (function () {
       }).join("") + "</div>";
     }
 
-    // ----- spots on this water, filterable by fish -----
+    // ----- pick a fish -> hot spots light up -----
     if (body.spots.length) {
-      html += "<div class='blk'><div class='blk-t'>Spots on this water</div></div>";
+      html += "<div class='blk'><div class='blk-t'>🎣 Find a fish's hot spots</div>" +
+        "<div class='muted note'>Tap a fish — its best spots light up here and on the map, ranked by season, tide & wind right now.</div></div>";
       html += "<div class='chips' id='body-species-filter'>" +
         "<span class='chip sm sel" + (!spFilter ? " on" : "") + "' data-sp=''>All fish</span>" +
         allSpecies.map(function (sp) {
           return "<span class='chip sm sel" + (spFilter === sp.id ? " on" : "") + "' data-sp='" + sp.id + "'>" +
             esc(sp.name.split(" (")[0]) + "</span>";
         }).join("") + "</div>";
+      html += "<div id='body-best'></div>";
       html += "<div id='body-spots'></div>";
     } else {
       html += "<div class='empty'>No curated spots in this area yet — add one in data/spots.js.</div>";
@@ -135,14 +137,31 @@ WF.ui = (function () {
     var spFilter = WF.map.getSpeciesFilter();
     var rows = body.spots
       .filter(function (s) { return !spFilter || WF.speciesForSpot(s).indexOf(spFilter) >= 0; })
-      .map(function (s) { return { s: s, r: WF.score.spot(s) }; })
+      .map(function (s) { return { s: s, r: spFilter ? WF.score.spotForSpecies(s, spFilter) : WF.score.spot(s) }; })
       .sort(function (a, b) { return b.r.score - a.r.score; });
-    el.innerHTML = rows.map(function (row) {
+
+    // "best for this fish" banner
+    var banner = document.getElementById("body-best");
+    if (banner) {
+      if (spFilter && rows.length) {
+        var sp = WF.speciesById(spFilter);
+        var t = rows[0];
+        var bcls = t.r.score >= 70 ? "good" : t.r.score >= 45 ? "mid" : "low";
+        var note = t.r.fishIn ? "" : "<div class='muted'>Out of season now — try " +
+          sp.months.map(function (m) { return MONTHS[m]; }).slice(0, 3).join("/") + "</div>";
+        banner.innerHTML = "<div class='best-banner'><div>🔥 Best for <b>" + esc(sp.name.split(" (")[0]) +
+          "</b> right now<br><span class='bb-spot'>" + esc(t.s.name) + "</span>" + note +
+          "</div><div class='score " + bcls + "'>" + t.r.score + "</div></div>";
+      } else { banner.innerHTML = ""; }
+    }
+
+    el.innerHTML = rows.map(function (row, i) {
       var s = row.s, r = row.r;
       var cls = r.score >= 70 ? "good" : r.score >= 45 ? "mid" : "low";
       var ico = (s.access || []).indexOf("kayak") >= 0 ? "🛶 " : (s.access || []).indexOf("pier") >= 0 ? "⚓ " : "";
+      var flame = (spFilter && i === 0 && r.score >= 40) ? "🔥 " : "";
       return "<div class='spot-row' data-id='" + s.id + "'>" +
-        "<div><b>" + ico + esc(s.name) + "</b><div class='spot-sub'>" +
+        "<div><b>" + flame + ico + esc(s.name) + "</b><div class='spot-sub'>" +
         esc((s.species || []).slice(0, 3).join(" · ")) + "</div></div>" +
         "<div class='score sm " + cls + "'>" + r.score + "</div></div>";
     }).join("") || "<div class='empty'>No spots here for that fish.</div>";
@@ -183,11 +202,20 @@ WF.ui = (function () {
     html += "<div class='blk'><div class='blk-t'>Bait / live bait</div><div class='blk-b'>" + esc(sp.bait) + "</div></div>";
     html += "<div class='blk'><div class='blk-t'>Regulations</div><div class='blk-b sp-regs'>📋 " + esc(sp.regs) +
       "</div></div>";
+    if (WF.map.getSelected()) {
+      html += "<button class='btn wide' id='sp-hotspots'>📍 Show " + esc(sp.name.split(" (")[0]) + " hot spots on the map</button>";
+    }
     html += "<div class='btn-row'>" +
       "<a class='btn' target='_blank' rel='noopener' href='https://wdfw.wa.gov/fishing/regulations'>Verify current rules</a>" +
       "<a class='btn' target='_blank' rel='noopener' href='https://wdfw.wa.gov/fishing/regulations/emergency-rules'>Emergency rules</a></div>";
     openSheet(html);
     wireBack();
+    var hs = document.getElementById("sp-hotspots");
+    if (hs) hs.addEventListener("click", function () {
+      WF.map.setSpeciesFilter(sp.id);
+      closeSheet();
+      WF.app.showTab("map");
+    });
   }
 
   // ---------- spot detail sheet ----------

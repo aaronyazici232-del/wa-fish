@@ -183,6 +183,29 @@ details[open].acc summary::after { content: " ▴"; }
 .mk-score {
   transform: rotate(45deg); font-size: 10px; font-weight: 800; color: #06243f;
 }
+.pin { position: relative; width: 34px; height: 34px; }
+.pin.hot .mk {
+  border-color: #ffd54a;
+  box-shadow: 0 0 0 3px rgba(255,200,60,.5), 0 0 12px 5px rgba(255,170,40,.85);
+  animation: hotpulse 1.4s ease-in-out infinite;
+}
+@keyframes hotpulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255,200,60,.4), 0 0 9px 3px rgba(255,170,40,.7); }
+  50% { box-shadow: 0 0 0 5px rgba(255,200,60,.65), 0 0 18px 8px rgba(255,170,40,1); }
+}
+.mk-flame {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  font-size: 17px; z-index: 2; filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+  pointer-events: none;
+}
+.best-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 10px 0 4px; padding: 11px 13px; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(240,177,79,.16), rgba(240,106,93,.12));
+  border: 1px solid rgba(240,177,79,.4); font-size: 14px;
+}
+.best-banner .bb-spot { font-weight: 700; font-size: 15.5px; }
+.best-banner .muted { font-size: 12px; }
 .leaflet-container { font: inherit; }
 /* big water-body bubbles */
 .bb-wrap { background: none; border: 0; }

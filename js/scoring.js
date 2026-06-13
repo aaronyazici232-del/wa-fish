@@ -128,6 +128,24 @@ WF.score = (function () {
     };
   }
 
+  // Same conditions, but scored FOR ONE FISH: the spot's live condition score
+  // overlaid with whether that species is actually catchable here this month.
+  // This is what powers "tap a fish -> hotspots light up."
+  function scoreSpotForSpecies(spot, spId) {
+    var base = scoreSpot(spot);
+    var sp = WF.speciesById && WF.speciesById(spId);
+    if (!sp) return base;
+    var month = new Date().getMonth() + 1;
+    var fishIn = sp.months.indexOf(month) >= 0;
+    // species in its run now: keep the spot's condition score.
+    // off-season: halve it so it dims out of the hotspot ranking.
+    var score = Math.round(base.score * (fishIn ? 1.0 : 0.5));
+    var label = sp.name.split(" (")[0];
+    var reasons = [{ ok: fishIn, text: fishIn ? label + " in season now" : label + " off-season now" }]
+      .concat(base.reasons);
+    return { spot: spot, score: score, reasons: reasons, safety: base.safety, tide: base.tide, fishIn: fishIn };
+  }
+
   function rankAll(filter) {
     return WF.SPOTS
       .filter(function (s) { return !filter || filter(s); })
@@ -135,5 +153,5 @@ WF.score = (function () {
       .sort(function (a, b) { return b.score - a.score; });
   }
 
-  return { spot: scoreSpot, rankAll: rankAll };
+  return { spot: scoreSpot, spotForSpecies: scoreSpotForSpecies, rankAll: rankAll };
 })();

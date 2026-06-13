@@ -3,7 +3,7 @@
 // Map tiles: cache-first with a size cap so viewed areas work offline.
 // API calls (NOAA/Open-Meteo/USGS): network only — the app keeps its own
 // last-good copy in localStorage, so the SW stays out of the way.
-var VERSION = "wafish-v3";
+var VERSION = "wafish-v4";
 var SHELL = VERSION + "-shell";
 var TILES = VERSION + "-tiles";
 var TILE_CAP = 600;

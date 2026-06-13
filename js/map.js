@@ -7,6 +7,7 @@ window.WF = window.WF || {};
 WF.map = (function () {
   var map = null;
   var maLayer = null;
+  var waterLayer = null;  // clickable highlight circles for lakes/rivers
   var maOn = true;
   var bodyMarkers = {};   // bodyId -> big bubble marker
   var spotMarkers = {};   // spotId -> sub-bubble marker (selected body only)
@@ -44,7 +45,25 @@ WF.map = (function () {
       attribution: "&copy; OpenStreetMap | MA bounds: WDFW"
     }).addTo(map);
     initMarineAreas();
+    initWaterCircles();
     render();
+  }
+
+  // Lakes & rivers have no polygon, so give each a clickable highlighted
+  // circle of water — tap it (or its bubble) to open the body.
+  function initWaterCircles() {
+    waterLayer = L.layerGroup();
+    WF.bodies.all().forEach(function (body) {
+      if (body.kind !== "lake" && body.kind !== "river") return;
+      var col = body.kind === "lake" ? COLORS.lake : COLORS.river;
+      var c = L.circle(body.center, {
+        radius: body.kind === "lake" ? 1500 : 1200,
+        color: col, weight: 1.4, opacity: 0.8, fillColor: col, fillOpacity: 0.18
+      });
+      c.on("click", function () { select(body.id); });
+      waterLayer.addLayer(c);
+    });
+    waterLayer.addTo(map);
   }
 
   // WDFW Marine Area polygons — the clickable water
@@ -103,9 +122,12 @@ WF.map = (function () {
   }
 
   // ---- sub-bubbles (spots of the selected body) ----
-  function spotHtml(spot, score) {
+  function spotHtml(spot, score, hot, best) {
     var c = COLORS[spot.fishery] || "#999";
-    return "<div class='mk' style='--mk:" + c + "'><span class='mk-score'>" + score + "</span></div>";
+    return "<div class='pin" + (hot ? " hot" : "") + "'>" +
+      (best ? "<div class='mk-flame'>🔥</div>" : "") +
+      "<div class='mk' style='--mk:" + c + "'><span class='mk-score'>" + score + "</span></div>" +
+      "</div>";
   }
 
   function renderSpots() {
@@ -117,16 +139,25 @@ WF.map = (function () {
     Object.keys(spotMarkers).forEach(function (id) {
       if (!want[id]) { map.removeLayer(spotMarkers[id]); delete spotMarkers[id]; }
     });
-    Object.keys(want).forEach(function (id) {
+    // score every shown spot — for the picked fish if one is selected
+    var scored = Object.keys(want).map(function (id) {
       var s = want[id];
-      var r = WF.score.spot(s);
-      var icon = L.divIcon({ className: "mk-wrap", html: spotHtml(s, r.score), iconSize: [34, 34], iconAnchor: [17, 17] });
-      if (spotMarkers[id]) { spotMarkers[id].setIcon(icon); }
+      var r = speciesFilter ? WF.score.spotForSpecies(s, speciesFilter) : WF.score.spot(s);
+      return { s: s, score: r.score };
+    }).sort(function (a, b) { return b.score - a.score; });
+    var top = scored.length ? scored[0].score : 0;
+    scored.forEach(function (row, i) {
+      var s = row.s;
+      // when a fish is picked, light up the best in-form spots
+      var hot = !!speciesFilter && row.score >= 50 && row.score >= top - 6;
+      var best = !!speciesFilter && i === 0 && row.score >= 40;
+      var icon = L.divIcon({ className: "mk-wrap", html: spotHtml(s, row.score, hot, best), iconSize: [34, 34], iconAnchor: [17, 17] });
+      if (spotMarkers[s.id]) { spotMarkers[s.id].setIcon(icon); }
       else {
-        var m = L.marker([s.lat, s.lng], { icon: icon, zIndexOffset: 800 });
+        var m = L.marker([s.lat, s.lng], { icon: icon, zIndexOffset: best ? 1000 : 800 });
         m.on("click", function () { WF.ui.showDetail(s.id, true); });
         m.addTo(map);
-        spotMarkers[id] = m;
+        spotMarkers[s.id] = m;
       }
     });
   }
@@ -136,11 +167,12 @@ WF.map = (function () {
     if (!body) return;
     selected = bodyId;
     speciesFilter = null;
+    if (waterLayer) map.removeLayer(waterLayer);
     render();
     if (body.feature) {
       map.fitBounds(L.geoJSON(body.feature).getBounds(), { padding: [16, 16] });
     } else {
-      map.setView(body.center, 11);
+      map.setView(body.center, 12);
     }
     document.getElementById("map-back").classList.add("show");
     WF.ui.showBody(bodyId);
@@ -151,6 +183,7 @@ WF.map = (function () {
     speciesFilter = null;
     WF.ui.closeSheet();
     document.getElementById("map-back").classList.remove("show");
+    if (waterLayer) waterLayer.addTo(map);
     render();
     map.setView([47.6, -122.9], 7);
   }
