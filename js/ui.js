@@ -89,8 +89,13 @@ WF.ui = (function () {
 
     // ----- pick a fish -> hot spots light up -----
     if (body.spots.length) {
+      var hint = body.kind === "lake"
+        ? "Tap a fish — the lake glows gold where it likely holds now, from depth, season & weather."
+        : body.kind === "river"
+        ? "Tap a fish — the river lights up gold when it's in season and in shape right now."
+        : "Tap a fish — its best spots light up here and on the map, ranked by season, tide & wind right now.";
       html += "<div class='blk'><div class='blk-t'>🎣 Find a fish's hot spots</div>" +
-        "<div class='muted note'>Tap a fish — its best spots light up here and on the map, ranked by season, tide & wind right now.</div></div>";
+        "<div class='muted note'>" + hint + "</div></div>";
       html += "<div class='chips' id='body-species-filter'>" +
         "<span class='chip sm sel" + (!spFilter ? " on" : "") + "' data-sp=''>All fish</span>" +
         allSpecies.map(function (sp) {
