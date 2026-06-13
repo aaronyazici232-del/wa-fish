@@ -318,7 +318,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-washington", name: "Lake Washington", fishery: "lake", region: "central",
-    lat: 47.6200, lng: -122.2550, area: "Lake",
+    lat: 47.6190, lng: -122.2456, area: "Lake",
     species: ["Coastal cutthroat", "Yellow perch", "Smallmouth bass"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [10,11,12,1,2,3,6,7],
     access: ["kayak","bank"],
@@ -329,7 +329,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-sammamish", name: "Lake Sammamish", fishery: "lake", region: "central",
-    lat: 47.5980, lng: -122.0820, area: "Lake",
+    lat: 47.6021, lng: -122.0886, area: "Lake",
     species: ["Cutthroat", "Smallmouth bass", "Yellow perch"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [5,6,7,10,11],
     access: ["kayak","bank"],
@@ -340,7 +340,7 @@ WF.SPOTS = [
   },
   {
     id: "green-lake", name: "Green Lake (Seattle)", fishery: "lake", region: "central",
-    lat: 47.6800, lng: -122.3290, area: "Lake",
+    lat: 47.6781, lng: -122.3383, area: "Lake",
     species: ["Stocked rainbow trout", "Triploids", "Bass (summer)"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [3,4,5,10,11],
     access: ["kayak","bank"],
@@ -351,7 +351,7 @@ WF.SPOTS = [
   },
   {
     id: "angle-lake", name: "Angle Lake (SeaTac)", fishery: "lake", region: "central",
-    lat: 47.4310, lng: -122.2890, area: "Lake",
+    lat: 47.4282, lng: -122.2858, area: "Lake",
     species: ["Stocked rainbow trout"],
     months: [3,4,5,6,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -362,7 +362,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-meridian", name: "Lake Meridian (Kent)", fishery: "lake", region: "central",
-    lat: 47.3665, lng: -122.1320, area: "Lake",
+    lat: 47.3630, lng: -122.1529, area: "Lake",
     species: ["Stocked rainbow trout", "Largemouth bass"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -537,7 +537,7 @@ WF.SPOTS = [
   },
   {
     id: "baker-lake", name: "Baker Lake", fishery: "lake", region: "north",
-    lat: 48.6480, lng: -121.6730, area: "Lake",
+    lat: 48.7202, lng: -121.6401, area: "Lake",
     species: ["Sockeye (Jul–Aug, when open)", "Kokanee", "Rainbow"],
     months: [4,5,6,7,8,9], prime: [7,8],
     access: ["kayak","boat"],
@@ -548,7 +548,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-stevens", name: "Lake Stevens", fishery: "lake", region: "north",
-    lat: 48.0150, lng: -122.0640, area: "Lake",
+    lat: 48.0044, lng: -122.0847, area: "Lake",
     species: ["Kokanee (spring–early summer)", "Cutthroat", "Bass"],
     months: [3,4,5,6,7,9,10], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -644,7 +644,7 @@ WF.SPOTS = [
   },
   {
     id: "american-lake", name: "American Lake (Lakewood)", fishery: "lake", region: "south",
-    lat: 47.1170, lng: -122.5650, area: "Lake",
+    lat: 47.1301, lng: -122.5628, area: "Lake",
     species: ["Stocked rainbow", "Kokanee", "Smallmouth"],
     months: [1,2,3,4,5,6,7,8,9,10,11,12], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -655,7 +655,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-cushman", name: "Lake Cushman", fishery: "lake", region: "peninsula",
-    lat: 47.4660, lng: -123.2210, area: "Lake",
+    lat: 47.4729, lng: -123.2544, area: "Lake",
     species: ["Kokanee", "Cutthroat", "Bass"],
     months: [4,5,6,7,8,9], prime: [5,6,7],
     access: ["kayak","boat"],
@@ -869,7 +869,7 @@ WF.SPOTS = [
   // ================= MORE LAKES (statewide) =================
   {
     id: "lake-tapps", name: "Lake Tapps", fishery: "lake", region: "south",
-    lat: 47.2330, lng: -122.1780, area: "Lake",
+    lat: 47.2222, lng: -122.1665, area: "Lake",
     species: ["Smallmouth bass", "Largemouth bass", "Kokanee", "Yellow perch", "Rainbow trout"],
     months: [4,5,6,7,8,9,10], prime: [5,6,7],
     access: ["kayak","bank"],
@@ -880,7 +880,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-sawyer", name: "Lake Sawyer", fishery: "lake", region: "central",
-    lat: 47.3450, lng: -122.0440, area: "Lake",
+    lat: 47.3334, lng: -122.0377, area: "Lake",
     species: ["Largemouth bass", "Smallmouth bass", "Kokanee", "Yellow perch", "Rainbow trout"],
     months: [4,5,6,7,8,9,10], prime: [5,6,9],
     access: ["kayak","bank"],
@@ -891,7 +891,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-goodwin", name: "Lake Goodwin", fishery: "lake", region: "north",
-    lat: 48.1320, lng: -122.2900, area: "Lake",
+    lat: 48.1415, lng: -122.2946, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Cutthroat"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -902,7 +902,7 @@ WF.SPOTS = [
   },
   {
     id: "silver-lake-cowlitz", name: "Silver Lake (Cowlitz)", fishery: "lake", region: "sw",
-    lat: 46.3170, lng: -122.8200, area: "Lake",
+    lat: 46.2949, lng: -122.7869, area: "Lake",
     species: ["Largemouth bass", "Black crappie", "Yellow perch", "Channel catfish", "Rainbow trout"],
     months: [4,5,6,7,8,9,10], prime: [5,6,7],
     access: ["kayak","bank"],
@@ -913,7 +913,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-whatcom", name: "Lake Whatcom", fishery: "lake", region: "north",
-    lat: 48.7100, lng: -122.3300, area: "Lake",
+    lat: 48.7309, lng: -122.3381, area: "Lake",
     species: ["Kokanee", "Smallmouth bass", "Cutthroat", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6,7],
     access: ["kayak","bank"],
@@ -924,7 +924,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-padden", name: "Lake Padden", fishery: "lake", region: "north",
-    lat: 48.7010, lng: -122.4350, area: "Lake",
+    lat: 48.7029, lng: -122.4533, area: "Lake",
     species: ["Rainbow trout", "Cutthroat", "Largemouth bass"],
     months: [3,4,5,6,9,10,11], prime: [4,5,10],
     access: ["kayak","bank"],
@@ -935,7 +935,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-crescent", name: "Lake Crescent", fishery: "lake", region: "peninsula",
-    lat: 48.0700, lng: -123.8000, area: "Lake",
+    lat: 48.0665, lng: -123.8204, area: "Lake",
     species: ["Beardslee rainbow (C&R)", "Crescenti cutthroat (C&R)"],
     months: [5,6,7,8,9,10], prime: [6,7,9],
     access: ["kayak","bank"],
@@ -946,7 +946,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-wenatchee", name: "Lake Wenatchee", fishery: "lake", region: "east",
-    lat: 47.8100, lng: -120.7800, area: "Lake",
+    lat: 47.8226, lng: -120.7772, area: "Lake",
     species: ["Sockeye (when open)", "Kokanee", "Bull trout (C&R)"],
     months: [5,6,7,8,9], prime: [7,8],
     access: ["kayak","boat"],
@@ -957,7 +957,7 @@ WF.SPOTS = [
   },
   {
     id: "moses-lake", name: "Moses Lake", fishery: "lake", region: "east",
-    lat: 47.1300, lng: -119.2900, area: "Lake",
+    lat: 47.1351, lng: -119.3413, area: "Lake",
     species: ["Walleye", "Smallmouth bass", "Largemouth bass", "Black crappie", "Yellow perch", "Channel catfish"],
     months: [4,5,6,7,8,9,10], prime: [5,6,9],
     access: ["kayak","bank"],
@@ -968,7 +968,7 @@ WF.SPOTS = [
   },
   {
     id: "potholes-reservoir", name: "Potholes Reservoir", fishery: "lake", region: "east",
-    lat: 46.9800, lng: -119.3300, area: "Lake",
+    lat: 47.0118, lng: -119.3395, area: "Lake",
     species: ["Walleye", "Largemouth bass", "Smallmouth bass", "Black crappie", "Yellow perch"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","boat"],
@@ -979,7 +979,7 @@ WF.SPOTS = [
   },
   {
     id: "banks-lake", name: "Banks Lake", fishery: "lake", region: "east",
-    lat: 47.8500, lng: -119.1700, area: "Lake",
+    lat: 47.8026, lng: -119.1952, area: "Lake",
     species: ["Walleye", "Smallmouth bass", "Kokanee", "Yellow perch", "Largemouth bass"],
     months: [4,5,6,7,8,9,10], prime: [5,6,9],
     access: ["kayak","boat"],
@@ -990,7 +990,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-chelan", name: "Lake Chelan (lower basin)", fishery: "lake", region: "east",
-    lat: 47.8550, lng: -120.0200, area: "Lake",
+    lat: 48.0380, lng: -120.3573, area: "Lake",
     species: ["Kokanee", "Lake trout (mackinaw)", "Cutthroat", "Smallmouth bass"],
     months: [3,4,5,6,7,8,9,10,11], prime: [4,5,10],
     access: ["kayak","boat"],
@@ -1149,7 +1149,7 @@ WF.SPOTS = [
   // --- Seattle Eastside & close-in ---
   {
     id: "pine-lake", name: "Pine Lake", fishery: "lake", region: "central",
-    lat: 47.5870, lng: -122.0470, area: "Lake",
+    lat: 47.5875, lng: -122.0447, area: "Lake",
     species: ["Rainbow trout", "Kokanee", "Largemouth bass", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -1160,7 +1160,7 @@ WF.SPOTS = [
   },
   {
     id: "beaver-lake", name: "Beaver Lake (Sammamish)", fishery: "lake", region: "central",
-    lat: 47.5640, lng: -122.0640, area: "Lake",
+    lat: 47.5850, lng: -122.0095, area: "Lake",
     species: ["Largemouth bass", "Rainbow trout", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1171,7 +1171,7 @@ WF.SPOTS = [
   },
   {
     id: "cottage-lake", name: "Cottage Lake (Woodinville)", fishery: "lake", region: "central",
-    lat: 47.7480, lng: -122.0820, area: "Lake",
+    lat: 47.7532, lng: -122.0883, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Yellow perch"],
     months: [3,4,5,6,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -1182,7 +1182,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-wilderness", name: "Lake Wilderness (Maple Valley)", fishery: "lake", region: "central",
-    lat: 47.3760, lng: -122.0430, area: "Lake",
+    lat: 47.3746, lng: -122.0355, area: "Lake",
     species: ["Rainbow trout", "Kokanee", "Largemouth bass", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -1193,7 +1193,7 @@ WF.SPOTS = [
   },
   {
     id: "phantom-lake", name: "Phantom Lake (Bellevue)", fishery: "lake", region: "central",
-    lat: 47.5840, lng: -122.1300, area: "Lake",
+    lat: 47.5933, lng: -122.1247, area: "Lake",
     species: ["Largemouth bass", "Yellow perch", "Rainbow trout"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1204,7 +1204,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-ballinger", name: "Lake Ballinger (Mountlake Terrace)", fishery: "lake", region: "central",
-    lat: 47.7870, lng: -122.3230, area: "Lake",
+    lat: 47.7823, lng: -122.3292, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Yellow perch"],
     months: [3,4,5,6,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -1216,7 +1216,7 @@ WF.SPOTS = [
   // --- North Sound lowland ---
   {
     id: "martha-lake", name: "Martha Lake (Lynnwood)", fishery: "lake", region: "north",
-    lat: 47.8540, lng: -122.2370, area: "Lake",
+    lat: 47.8535, lng: -122.2435, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Yellow perch"],
     months: [3,4,5,6,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -1227,7 +1227,7 @@ WF.SPOTS = [
   },
   {
     id: "silver-lake-everett", name: "Silver Lake (Everett)", fishery: "lake", region: "north",
-    lat: 47.8870, lng: -122.2360, area: "Lake",
+    lat: 47.8926, lng: -122.2089, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Channel catfish"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -1238,7 +1238,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-roesiger", name: "Lake Roesiger (Snohomish)", fishery: "lake", region: "north",
-    lat: 48.0260, lng: -121.8800, area: "Lake",
+    lat: 47.9889, lng: -121.9161, area: "Lake",
     species: ["Kokanee", "Rainbow trout", "Largemouth bass", "Smallmouth bass"],
     months: [4,5,6,7,8,9,10], prime: [5,6,7],
     access: ["kayak","bank"],
@@ -1249,7 +1249,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-cassidy", name: "Lake Cassidy (Marysville)", fishery: "lake", region: "north",
-    lat: 48.0560, lng: -122.1010, area: "Lake",
+    lat: 48.0521, lng: -122.0952, area: "Lake",
     species: ["Largemouth bass", "Rainbow trout", "Yellow perch", "Black crappie"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1261,7 +1261,7 @@ WF.SPOTS = [
   // --- Kitsap / South Sound ---
   {
     id: "kitsap-lake", name: "Kitsap Lake (Bremerton)", fishery: "lake", region: "south",
-    lat: 47.5780, lng: -122.7170, area: "Lake",
+    lat: 47.5724, lng: -122.7053, area: "Lake",
     species: ["Largemouth bass", "Cutthroat", "Yellow perch", "Rainbow trout"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1272,7 +1272,7 @@ WF.SPOTS = [
   },
   {
     id: "long-lake-kitsap", name: "Long Lake (Port Orchard)", fishery: "lake", region: "south",
-    lat: 47.4360, lng: -122.6440, area: "Lake",
+    lat: 47.4256, lng: -122.6564, area: "Lake",
     species: ["Largemouth bass", "Rainbow trout", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1283,7 +1283,7 @@ WF.SPOTS = [
   },
   {
     id: "spanaway-lake", name: "Spanaway Lake (Pierce)", fishery: "lake", region: "south",
-    lat: 47.1010, lng: -122.4330, area: "Lake",
+    lat: 47.1101, lng: -122.4480, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Black crappie"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
     access: ["kayak","bank"],
@@ -1294,7 +1294,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-kapowsin", name: "Lake Kapowsin (Pierce)", fishery: "lake", region: "south",
-    lat: 47.0080, lng: -122.2300, area: "Lake",
+    lat: 46.9769, lng: -122.2212, area: "Lake",
     species: ["Largemouth bass", "Black crappie", "Yellow perch"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1316,7 +1316,7 @@ WF.SPOTS = [
   },
   {
     id: "ohop-lake", name: "Ohop Lake (Pierce)", fishery: "lake", region: "south",
-    lat: 46.8870, lng: -122.2360, area: "Lake",
+    lat: 46.8991, lng: -122.2797, area: "Lake",
     species: ["Largemouth bass", "Rainbow trout", "Black crappie"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1328,7 +1328,7 @@ WF.SPOTS = [
   // --- SW Washington ---
   {
     id: "mineral-lake", name: "Mineral Lake (Lewis)", fishery: "lake", region: "sw",
-    lat: 46.7180, lng: -122.1740, area: "Lake",
+    lat: 46.7265, lng: -122.1735, area: "Lake",
     species: ["Rainbow trout (trophy)", "Brown trout", "Largemouth bass"],
     months: [4,5,6,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -1339,7 +1339,7 @@ WF.SPOTS = [
   },
   {
     id: "riffe-lake", name: "Riffe Lake (Cowlitz)", fishery: "lake", region: "sw",
-    lat: 46.5170, lng: -122.3300, area: "Lake",
+    lat: 46.4905, lng: -122.3003, area: "Lake",
     species: ["Landlocked coho (silvers)", "Smallmouth bass", "Rainbow trout"],
     months: [4,5,6,7,8,9,10], prime: [5,6,7],
     access: ["kayak","boat"],
@@ -1350,7 +1350,7 @@ WF.SPOTS = [
   },
   {
     id: "mayfield-lake", name: "Mayfield Lake (Cowlitz)", fishery: "lake", region: "sw",
-    lat: 46.5060, lng: -122.5800, area: "Lake",
+    lat: 46.5380, lng: -122.5472, area: "Lake",
     species: ["Tiger musky", "Largemouth bass", "Coho", "Rainbow trout"],
     months: [4,5,6,7,8,9,10], prime: [6,7,8],
     access: ["kayak","boat"],
@@ -1361,7 +1361,7 @@ WF.SPOTS = [
   },
   {
     id: "lacamas-lake", name: "Lacamas Lake (Camas)", fishery: "lake", region: "sw",
-    lat: 45.6210, lng: -122.4060, area: "Lake",
+    lat: 45.6162, lng: -122.4244, area: "Lake",
     species: ["Largemouth bass", "Yellow perch", "Black crappie"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1372,7 +1372,7 @@ WF.SPOTS = [
   },
   {
     id: "battle-ground-lake", name: "Battle Ground Lake", fishery: "lake", region: "sw",
-    lat: 45.8010, lng: -122.4920, area: "Lake",
+    lat: 45.8047, lng: -122.4942, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass"],
     months: [3,4,5,6,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -1383,7 +1383,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-sacajawea", name: "Lake Sacajawea (Longview)", fishery: "lake", region: "sw",
-    lat: 46.1450, lng: -122.9450, area: "Lake",
+    lat: 46.1367, lng: -122.9512, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Channel catfish"],
     months: [3,4,5,6,7,8,9,10], prime: [4,5],
     access: ["kayak","bank"],
@@ -1395,7 +1395,7 @@ WF.SPOTS = [
   // --- Whatcom / Bellingham ---
   {
     id: "lake-samish", name: "Lake Samish (Bellingham)", fishery: "lake", region: "north",
-    lat: 48.6720, lng: -122.4040, area: "Lake",
+    lat: 48.6660, lng: -122.3910, area: "Lake",
     species: ["Kokanee", "Cutthroat", "Smallmouth bass", "Largemouth bass"],
     months: [4,5,6,7,8,9,10], prime: [5,6,7],
     access: ["kayak","bank"],
@@ -1406,7 +1406,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-terrell", name: "Lake Terrell (Whatcom)", fishery: "lake", region: "north",
-    lat: 48.8520, lng: -122.6900, area: "Lake",
+    lat: 48.8640, lng: -122.6867, area: "Lake",
     species: ["Largemouth bass", "Yellow perch", "Black crappie"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1417,7 +1417,7 @@ WF.SPOTS = [
   },
   {
     id: "fazon-lake", name: "Fazon Lake (Whatcom)", fishery: "lake", region: "north",
-    lat: 48.8470, lng: -122.3870, area: "Lake",
+    lat: 48.8659, lng: -122.3679, area: "Lake",
     species: ["Largemouth bass", "Black crappie", "Channel catfish", "Yellow perch"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1429,7 +1429,7 @@ WF.SPOTS = [
   // --- Olympic Peninsula ---
   {
     id: "lake-sutherland", name: "Lake Sutherland (Port Angeles)", fishery: "lake", region: "peninsula",
-    lat: 48.0840, lng: -123.6700, area: "Lake",
+    lat: 48.0779, lng: -123.7086, area: "Lake",
     species: ["Kokanee", "Cutthroat", "Largemouth bass"],
     months: [4,5,6,7,8,9,10], prime: [5,6,7],
     access: ["kayak","bank"],
@@ -1441,7 +1441,7 @@ WF.SPOTS = [
   // --- Eastside / Columbia Basin ---
   {
     id: "lake-roosevelt", name: "Lake Roosevelt (Columbia)", fishery: "lake", region: "east",
-    lat: 47.9430, lng: -118.9820, area: "Lake",
+    lat: 48.0999, lng: -118.2596, area: "Lake",
     species: ["Walleye", "Kokanee", "Rainbow trout (triploid)", "Smallmouth bass", "White sturgeon (C&R)"],
     months: [3,4,5,6,7,8,9,10,11], prime: [5,6,9,10],
     access: ["kayak","boat"],
@@ -1452,7 +1452,7 @@ WF.SPOTS = [
   },
   {
     id: "sprague-lake", name: "Sprague Lake", fishery: "lake", region: "east",
-    lat: 47.1700, lng: -118.0000, area: "Lake",
+    lat: 47.2350, lng: -118.1000, area: "Lake",
     species: ["Walleye", "Largemouth bass", "Black crappie", "Yellow perch", "Rainbow trout"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","boat"],
@@ -1463,7 +1463,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-lenore", name: "Lake Lenore", fishery: "lake", region: "east",
-    lat: 47.5000, lng: -119.5200, area: "Lake",
+    lat: 47.4877, lng: -119.5173, area: "Lake",
     species: ["Lahontan cutthroat (selective, big)"],
     months: [3,4,5,9,10,11], prime: [4,10],
     access: ["kayak","bank"],
@@ -1474,7 +1474,7 @@ WF.SPOTS = [
   },
   {
     id: "newman-lake", name: "Newman Lake (Spokane)", fishery: "lake", region: "east",
-    lat: 47.7600, lng: -117.0500, area: "Lake",
+    lat: 47.7771, lng: -117.1004, area: "Lake",
     species: ["Tiger musky", "Largemouth bass", "Black crappie", "Yellow perch"],
     months: [4,5,6,7,8,9,10], prime: [6,7,8],
     access: ["kayak","boat"],
@@ -1485,7 +1485,7 @@ WF.SPOTS = [
   },
   {
     id: "rimrock-lake", name: "Rimrock Lake (Tieton)", fishery: "lake", region: "east",
-    lat: 46.6500, lng: -121.1300, area: "Lake",
+    lat: 46.6393, lng: -121.1782, area: "Lake",
     species: ["Kokanee", "Rainbow trout"],
     months: [5,6,7,8,9], prime: [6,7],
     access: ["kayak","boat"],
@@ -1496,7 +1496,7 @@ WF.SPOTS = [
   },
   {
     id: "curlew-lake", name: "Curlew Lake (Ferry)", fishery: "lake", region: "east",
-    lat: 48.7400, lng: -118.6700, area: "Lake",
+    lat: 48.7343, lng: -118.6659, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Tiger musky", "Yellow perch"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","boat"],
@@ -1507,7 +1507,7 @@ WF.SPOTS = [
   },
   {
     id: "liberty-lake", name: "Liberty Lake (Spokane)", fishery: "lake", region: "east",
-    lat: 47.6400, lng: -117.0800, area: "Lake",
+    lat: 47.6452, lng: -117.0780, area: "Lake",
     species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Black crappie"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
