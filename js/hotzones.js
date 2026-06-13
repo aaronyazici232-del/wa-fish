@@ -20,9 +20,12 @@ WF.hotzones = (function () {
     crappie:     { dock: 0.90, weed: 0.85, inlet: 0.60, dropoff: 0.55, flat: 0.50, point: 0.40, deep: 0.35 },
     mackinaw:    { deep: 0.95, dropoff: 0.70, point: 0.35, inlet: 0.30, flat: 0.20, weed: 0.12, dock: 0.12 },
     bulltrout:   { inlet: 0.82, deep: 0.62, dropoff: 0.60, point: 0.55, flat: 0.35, dock: 0.30, weed: 0.20 },
-    catfish:     { flat: 0.80, weed: 0.72, inlet: 0.66, dock: 0.60, dropoff: 0.46, deep: 0.40, point: 0.30 }
+    catfish:     { flat: 0.80, weed: 0.72, inlet: 0.66, dock: 0.60, dropoff: 0.46, deep: 0.40, point: 0.30 },
+    musky:       { weed: 0.92, dock: 0.62, point: 0.60, dropoff: 0.52, flat: 0.50, inlet: 0.50, deep: 0.30 },
+    sturgeon:    { deep: 0.90, dropoff: 0.62, inlet: 0.55, flat: 0.55, dock: 0.35, point: 0.30, weed: 0.25 },
+    brown:       { dropoff: 0.72, inlet: 0.70, point: 0.68, deep: 0.55, dock: 0.55, flat: 0.50, weed: 0.45 }
   };
-  var WARMWATER = { yellowperch: 1, smallmouth: 1, largemouth: 1, bass: 1, crappie: 1, catfish: 1 };
+  var WARMWATER = { yellowperch: 1, smallmouth: 1, largemouth: 1, bass: 1, crappie: 1, catfish: 1, musky: 1 };
 
   function weight(spId, type) {
     var w = HAB[spId];

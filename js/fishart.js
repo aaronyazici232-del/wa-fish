@@ -107,6 +107,17 @@ WF.fishart = function (art, w) {
     s += "<circle cx='62' cy='30' r='3.4' fill='#2a2230'/><circle cx='61' cy='29' r='1.1' fill='#fff'/>";
   }
 
+  if (a.shape === "sturgeon") {
+    s += "<path d='M6 32 C 26 23, 64 22, 92 27 L110 17 L103 31 L110 43 L92 37 C64 41, 26 41, 6 32 Z' fill='" + side + "'/>";
+    s += "<path d='M6 32 C 26 24, 64 23, 92 27 C64 28, 26 30, 6 32 Z' fill='" + back + "'/>"; // dorsal ridge
+    s += "<path d='M6 32 C 26 39, 64 40, 92 35 C64 37, 26 36, 6 32 Z' fill='" + belly + "'/>";
+    s += "<path d='M2 31 L8 30 L8 34 L2 33 Z' fill='" + side + "'/>"; // pointed snout
+    for (var st = 0; st < 6; st++) { var sx = 22 + st * 11; s += "<path d='M" + sx + " 25 l3 -4 l3 4 z' fill='" + back + "' opacity='.85'/>"; } // dorsal scutes
+    s += "<path d='M9 35 q-3 3 -6 2 M12 36 q-2 4 -5 4' stroke='" + back + "' stroke-width='1' fill='none' opacity='.8'/>"; // barbels
+    s += "<path d='M36 37 C42 43 50 43 54 38 L46 34 Z' fill='" + back + "' opacity='.5'/>"; // pectoral
+    s += "<circle cx='13' cy='30' r='1.7' fill='#12161a'/>";
+  }
+
   if (a.shape === "shrimp") {
     s += "<path d='M24 22 C44 10 78 12 92 26 C98 34 94 44 84 46 C88 38 86 32 78 30 C64 24 44 24 32 30 C26 32 24 27 24 22 Z' fill='" + side + "'/>";
     s += "<path d='M24 22 C44 12 76 14 90 26 C76 18 46 18 26 26 Z' fill='" + back + "'/>";

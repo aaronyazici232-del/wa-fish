@@ -29,6 +29,39 @@ LAKES = [
     ("wb-potholes-reservoir", "Potholes Reservoir", 46.98, -119.33, 0.14, True),
     ("wb-banks-lake", "Banks Lake", 47.85, -119.18, 0.22, True),
     ("wb-lake-chelan", "Lake Chelan", 48.05, -120.30, 0.45, True),
+    ("wb-pine-lake", "Pine Lake", 47.587, -122.047, 0.02, True),
+    ("wb-beaver-lake", "Beaver Lake", 47.564, -122.064, 0.02, True),
+    ("wb-cottage-lake", "Cottage Lake", 47.748, -122.082, 0.02, True),
+    ("wb-lake-wilderness", "Lake Wilderness", 47.376, -122.043, 0.02, True),
+    ("wb-phantom-lake", "Phantom Lake", 47.584, -122.130, 0.02, True),
+    ("wb-lake-ballinger", "Lake Ballinger", 47.787, -122.323, 0.02, True),
+    ("wb-martha-lake", "Martha Lake", 47.854, -122.237, 0.02, True),
+    ("wb-silver-lake-everett", "Silver Lake", 47.887, -122.236, 0.03, True),
+    ("wb-lake-roesiger", "Lake Roesiger", 48.026, -121.880, 0.04, True),
+    ("wb-lake-cassidy", "Lake Cassidy", 48.056, -122.101, 0.02, True),
+    ("wb-kitsap-lake", "Kitsap Lake", 47.578, -122.717, 0.02, True),
+    ("wb-long-lake-kitsap", "Long Lake", 47.436, -122.644, 0.03, True),
+    ("wb-spanaway-lake", "Spanaway Lake", 47.101, -122.433, 0.03, True),
+    ("wb-lake-kapowsin", "Lake Kapowsin", 47.008, -122.230, 0.04, True),
+    ("wb-tanwax-lake", "Tanwax Lake", 46.923, -122.221, 0.02, True),
+    ("wb-ohop-lake", "Ohop Lake", 46.887, -122.236, 0.03, True),
+    ("wb-mineral-lake", "Mineral Lake", 46.718, -122.174, 0.03, True),
+    ("wb-riffe-lake", "Riffe Lake", 46.530, -122.40, 0.16, True),
+    ("wb-mayfield-lake", "Mayfield Lake", 46.506, -122.58, 0.10, True),
+    ("wb-lacamas-lake", "Lacamas Lake", 45.621, -122.406, 0.03, True),
+    ("wb-battle-ground-lake", "Battle Ground Lake", 45.801, -122.492, 0.02, True),
+    ("wb-lake-sacajawea", "Lake Sacajawea", 46.145, -122.945, 0.02, True),
+    ("wb-lake-samish", "Lake Samish", 48.672, -122.404, 0.05, True),
+    ("wb-lake-terrell", "Lake Terrell", 48.852, -122.690, 0.03, True),
+    ("wb-fazon-lake", "Fazon Lake", 48.847, -122.387, 0.02, True),
+    ("wb-lake-sutherland", "Lake Sutherland", 48.084, -123.670, 0.03, True),
+    ("wb-lake-roosevelt", "Roosevelt", 47.943, -118.982, 0.30, False),
+    ("wb-sprague-lake", "Sprague Lake", 47.170, -118.000, 0.06, True),
+    ("wb-lake-lenore", "Lake Lenore", 47.500, -119.520, 0.06, True),
+    ("wb-newman-lake", "Newman Lake", 47.760, -117.050, 0.04, True),
+    ("wb-rimrock-lake", "Rimrock Lake", 46.650, -121.130, 0.08, True),
+    ("wb-curlew-lake", "Curlew Lake", 48.740, -118.670, 0.05, True),
+    ("wb-liberty-lake", "Liberty Lake", 47.640, -117.080, 0.03, True),
 ]
 RIVERS = [
     ("wb-green-river", "Green River", 47.30, -122.22, 0.10),
@@ -119,15 +152,39 @@ def stitch(ways):
     return rings
 
 
-def lake_geometry(elements, name):
+def el_in_bbox(el, bbox):
+    s, w, n, e = bbox
+    def hit(geom):
+        for p in geom:
+            if s <= p["lat"] <= n and w <= p["lon"] <= e:
+                return True
+        return False
+    if el.get("type") == "way" and "geometry" in el:
+        return hit(el["geometry"])
+    if el.get("type") == "relation":
+        for m in el.get("members", []):
+            if "geometry" in m and hit(m["geometry"]):
+                return True
+    return False
+
+
+def name_match(nm, name, exact):
+    return nm == name if exact else (name.lower() in nm.lower())
+
+
+def lake_geometry(elements, name, bbox, exact):
+    pad = 0.02
+    pbox = (bbox[0] - pad, bbox[1] - pad, bbox[2] + pad, bbox[3] + pad)
     outer_ways, inner_ways, closed = [], [], []
     for el in elements:
         nm = el.get("tags", {}).get("name", "")
+        if not name_match(nm, name, exact):
+            continue
+        if not el_in_bbox(el, pbox):  # pin duplicate-named lakes to their location
+            continue
         if el["type"] == "way" and "geometry" in el:
-            coords = [[p["lon"], p["lat"]] for p in el["geometry"]]
-            if nm == name:
-                closed.append(coords)
-        elif el["type"] == "relation" and nm == name:
+            closed.append([[p["lon"], p["lat"]] for p in el["geometry"]])
+        elif el["type"] == "relation":
             for m in el.get("members", []):
                 if m.get("type") == "way" and "geometry" in m:
                     coords = [[p["lon"], p["lat"]] for p in m["geometry"]]
@@ -135,7 +192,6 @@ def lake_geometry(elements, name):
     outer = stitch(outer_ways) + [c for c in closed if near(c[0], c[-1])]
     inner = stitch(inner_ways)
     if not outer:
-        # last resort: biggest closed way regardless of name match
         if closed:
             outer = [max(closed, key=len)]
         else:
@@ -144,9 +200,9 @@ def lake_geometry(elements, name):
     polys = []
     for o in outer:
         ring = r5(decimate(o))
-        holes = [r5(decimate(h)) for h in inner if len(h) > 6]
+        holes = [r5(decimate(hh)) for hh in inner if len(hh) > 6]
         polys.append([ring] + holes)
-        holes = []  # holes only on the largest outer
+        inner = []  # holes only on the largest outer
     if len(polys) == 1:
         return {"type": "Polygon", "coordinates": polys[0]}
     return {"type": "MultiPolygon", "coordinates": [[p[0]] for p in polys]}
@@ -179,24 +235,29 @@ def river_geometry(elements, name, bbox):
 
 
 def fetch_lakes():
-    parts = []
-    for _id, name, lat, lng, h, _ in LAKES:
-        bbox = "%f,%f,%f,%f" % (lat - h, lng - h, lat + h, lng + h)
-        parts.append('way["natural"="water"]["name"="%s"](%s);' % (name, bbox))
-        parts.append('relation["natural"="water"]["name"="%s"](%s);' % (name, bbox))
-    q = "[out:json][timeout:180];(" + "".join(parts) + ");out geom;"
-    print("fetching %d lakes..." % len(LAKES))
-    res = overpass(q)
     out = {}
-    if not res:
-        return out
-    for _id, name, lat, lng, h, _ in LAKES:
-        g = lake_geometry(res["elements"], name)
-        if g:
-            out[_id] = g
-            print("  ok  %-22s %s" % (name, g["type"]))
-        else:
-            print("  --  %-22s (no shape)" % name)
+    CH = 12
+    for ci in range(0, len(LAKES), CH):
+        chunk = LAKES[ci:ci + CH]
+        parts = []
+        for _id, name, lat, lng, h, exact in chunk:
+            bbox = "%f,%f,%f,%f" % (lat - h, lng - h, lat + h, lng + h)
+            nf = ('["name"="%s"]' % name) if exact else ('["name"~"%s",i]' % name)
+            parts.append('way["natural"="water"]%s(%s);' % (nf, bbox))
+            parts.append('relation["natural"="water"]%s(%s);' % (nf, bbox))
+        q = "[out:json][timeout:180];(" + "".join(parts) + ");out geom;"
+        print("fetching lakes %d-%d ..." % (ci + 1, ci + len(chunk)))
+        res = overpass(q)
+        if res:
+            for _id, name, lat, lng, h, exact in chunk:
+                bbox = (lat - h, lng - h, lat + h, lng + h)
+                g = lake_geometry(res["elements"], name, bbox, exact)
+                if g:
+                    out[_id] = g
+                    print("  ok  %-24s %s" % (name, g["type"]))
+                else:
+                    print("  --  %-24s (no shape)" % name)
+        time.sleep(3)
     return out
 
 

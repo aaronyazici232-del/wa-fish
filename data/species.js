@@ -264,6 +264,36 @@ WF.SPECIES = [
     bait: "Nightcrawler gobs, chicken liver, cut bait, or stink bait on a slip-sinker rig",
     guide: "An evening-and-night fishery. Cast cut bait or a crawler gob onto flats and channel edges 8–25 ft, prop the rod up, and wait — catfish follow scent to the bait. Moses, Potholes, and Silver Lake (Cowlitz) have strong numbers. Warm summer nights are prime.",
     regs: "Usually 5/day, no minimum size, on most lakes — check the listing. Freshwater license."
+  },
+  {
+    id: "musky", name: "Tiger Musky", aka: "Sterile predator stocked to control suckers & pikeminnow",
+    keywords: ["tiger musky", "muskie", "musky"],
+    months: [5, 6, 7, 8, 9, 10],
+    art: { shape: "bass", back: "#3f5a36", side: "#9bb074", belly: "#e9efd9", barsV: true },
+    lures: "Big bucktails, large glide/jerkbaits, oversized swimbaits — 6–10\" gear, heavy rod, wire/heavy-fluoro leader",
+    bait: "Not a bait fishery — they want big moving lures",
+    guide: "The fish of 10,000 casts. Throw big lures along weed edges, points, and drop-offs and retrieve with speed changes — then ALWAYS finish with a figure-8 at the kayak, because muskies follow and crush the lure at the last second. Carry a big net, long pliers, and bolt cutters, and revive them fully. Mayfield, Newman, Curlew, and Tapps hold them.",
+    regs: "50\" minimum, 1 fish, on WA musky waters — effectively catch-and-release. Wire leader and big release tools are mandatory gear, not optional."
+  },
+  {
+    id: "sturgeon", name: "White Sturgeon", aka: "Living dinosaur — mostly catch & release",
+    keywords: ["sturgeon"],
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    art: { shape: "sturgeon", back: "#4a5560", side: "#8d97a1", belly: "#e7eaee" },
+    lures: "None — scent bait on the bottom",
+    bait: "Fresh-dead smelt, herring, shad, squid, or nightcrawler gobs on a sliding-sinker rig with a heavy rod",
+    guide: "Anchor over deep holes and channel edges (40–80+ ft) in the Columbia and Lake Roosevelt and soak bait hard on the bottom. Sturgeon mouth the bait — wait for the rod to load, then sweep into them. They're enormous and powerful; use heavy gear and a stout anchor. Almost entirely catch-and-release.",
+    regs: "Retention is CLOSED or tightly slot-limited on most waters and changes yearly — assume CATCH-AND-RELEASE and verify before keeping. Oversize fish may not be removed from the water."
+  },
+  {
+    id: "brown", name: "Brown Trout", aka: "",
+    keywords: ["brown trout"],
+    months: [3, 4, 5, 6, 9, 10, 11],
+    art: { shape: "salmon", back: "#5a4a2e", side: "#c9b079", belly: "#f1e7cc", spots: true, slash: "#c2562e" },
+    lures: "Brown/gold spoons, minnow plugs and jerkbaits, big streamers — they turn fish-eating as they grow",
+    bait: "Nightcrawler or minnow where legal",
+    guide: "Wary and structure-oriented. Fish low light along drop-offs, points, and inlet mouths; bigger browns hunt baitfish, so throw minnow-imitating plugs at dawn and dusk. Mineral Lake and a handful of rivers grow true trophies. Long casts and a quiet approach matter.",
+    regs: "Counted in the trout limit on most lakes; some trophy waters carry special size rules — check the listing."
   }
 ];
 

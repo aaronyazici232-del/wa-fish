@@ -53,5 +53,24 @@ WF.LAKE_ZONES = {
     { name: "Upper inlet (Baker R)", type: "inlet", lat: 48.7350, lng: -121.6580, r: 360 },
     { name: "Horseshoe Cove flats", type: "flat", lat: 48.6660, lng: -121.6700, r: 320 },
     { name: "Mid-lake drop-off", type: "dropoff", lat: 48.7100, lng: -121.6540, r: 320 }
+  ],
+  "wb-pine-lake": [
+    { name: "North weed bay", type: "weed", lat: 47.5905, lng: -122.0470, r: 130 },
+    { name: "South-end docks", type: "dock", lat: 47.5840, lng: -122.0470, r: 130 },
+    { name: "East dock row", type: "dock", lat: 47.5870, lng: -122.0445, r: 110, wind: "W" },
+    { name: "Deep middle (kokanee/trout)", type: "deep", lat: 47.5872, lng: -122.0472, r: 150 }
+  ],
+  "wb-lake-tapps": [
+    { name: "North Tapps weedy arms", type: "weed", lat: 47.2530, lng: -122.1730, r: 380 },
+    { name: "Rocky points & old roadbeds", type: "point", lat: 47.2360, lng: -122.1700, r: 320 },
+    { name: "Dam-end drop-off", type: "dropoff", lat: 47.2150, lng: -122.1840, r: 320 },
+    { name: "Open basin (kokanee)", type: "deep", lat: 47.2330, lng: -122.1780, r: 360 },
+    { name: "South dock rows", type: "dock", lat: 47.2230, lng: -122.1650, r: 300 }
+  ],
+  "wb-lake-sawyer": [
+    { name: "North weedy bays", type: "weed", lat: 47.3500, lng: -122.0470, r: 240 },
+    { name: "Dock rows", type: "dock", lat: 47.3450, lng: -122.0400, r: 220, wind: "W" },
+    { name: "Rocky points", type: "point", lat: 47.3410, lng: -122.0480, r: 220 },
+    { name: "Deep hole (kokanee)", type: "deep", lat: 47.3450, lng: -122.0440, r: 260 }
   ]
 };

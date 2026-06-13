@@ -1143,6 +1143,378 @@ WF.SPOTS = [
     launch: "Below Merwin Dam near Woodland/Ariel. Dam-controlled flows keep it fishable year-round.",
     depth: "—", sonar: "—",
     notes: "SW Washington workhorse — strong hatchery returns of springers, summer steelhead, and coho."
+  },
+
+  // ================= EVEN MORE LAKES =================
+  // --- Seattle Eastside & close-in ---
+  {
+    id: "pine-lake", name: "Pine Lake", fishery: "lake", region: "central",
+    lat: 47.5870, lng: -122.0470, area: "Lake",
+    species: ["Rainbow trout", "Kokanee", "Largemouth bass", "Yellow perch"],
+    months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
+    access: ["kayak","bank"],
+    launch: "Pine Lake Park ramp in Sammamish — small, no-wake, an ideal quick kayak lake.",
+    depth: "Stocked trout cruise 8–20 ft; bass on the weedy north end and dock rows; a few kokanee in the deep middle.",
+    sonar: "Troll the trout band, then ClearVü the docks for bass; kokanee show as a band over the basin.",
+    notes: "Heavily stocked spring trout lake minutes from Lake Sammamish — kid- and kayak-friendly."
+  },
+  {
+    id: "beaver-lake", name: "Beaver Lake (Sammamish)", fishery: "lake", region: "central",
+    lat: 47.5640, lng: -122.0640, area: "Lake",
+    species: ["Largemouth bass", "Rainbow trout", "Yellow perch"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "Beaver Lake Park ramp; no-wake, weedy and quiet.",
+    depth: "Thick weedbeds and lily pads — largemouth water 4–12 ft; stocked trout in spring.",
+    sonar: "ClearVü the pad edges and weed points.",
+    notes: "Good largemouth lake on the Sammamish plateau; frog bite in summer."
+  },
+  {
+    id: "cottage-lake", name: "Cottage Lake (Woodinville)", fishery: "lake", region: "central",
+    lat: 47.7480, lng: -122.0820, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Yellow perch"],
+    months: [3,4,5,6,9,10], prime: [4,5],
+    access: ["kayak","bank"],
+    launch: "County park on the north shore; small electric-only lake.",
+    depth: "Shallow; stockers 5–18 ft, bass in the pads and docks.",
+    sonar: "—",
+    notes: "Reliable spring stocker lake near Woodinville."
+  },
+  {
+    id: "lake-wilderness", name: "Lake Wilderness (Maple Valley)", fishery: "lake", region: "central",
+    lat: 47.3760, lng: -122.0430, area: "Lake",
+    species: ["Rainbow trout", "Kokanee", "Largemouth bass", "Yellow perch"],
+    months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
+    access: ["kayak","bank"],
+    launch: "Lake Wilderness Park ramp in Maple Valley.",
+    depth: "Stocked trout and a kokanee population; bass on the weedy shorelines and docks.",
+    sonar: "Find the kokanee band over the deep end; troll trout shallower.",
+    notes: "Popular family lake with a surprising kokanee fishery."
+  },
+  {
+    id: "phantom-lake", name: "Phantom Lake (Bellevue)", fishery: "lake", region: "central",
+    lat: 47.5840, lng: -122.1300, area: "Lake",
+    species: ["Largemouth bass", "Yellow perch", "Rainbow trout"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "Small Bellevue lake with limited car-top access; electric only.",
+    depth: "Weedy and shallow — classic largemouth and perch water.",
+    sonar: "—",
+    notes: "Quiet urban bass lake."
+  },
+  {
+    id: "lake-ballinger", name: "Lake Ballinger (Mountlake Terrace)", fishery: "lake", region: "central",
+    lat: 47.7870, lng: -122.3230, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Yellow perch"],
+    months: [3,4,5,6,9,10], prime: [4,5],
+    access: ["kayak","bank"],
+    launch: "Ballinger Park ramp.",
+    depth: "Stocked trout 8–20 ft; bass and perch on the weedy margins.",
+    sonar: "—",
+    notes: "Easy stocker lake between Seattle and Everett."
+  },
+  // --- North Sound lowland ---
+  {
+    id: "martha-lake", name: "Martha Lake (Lynnwood)", fishery: "lake", region: "north",
+    lat: 47.8540, lng: -122.2370, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Yellow perch"],
+    months: [3,4,5,6,9,10], prime: [4,5],
+    access: ["kayak","bank"],
+    launch: "County park ramp on the south shore.",
+    depth: "Stockers 8–20 ft; bass in the docks and pads.",
+    sonar: "—",
+    notes: "Heavily stocked spring lake in south Snohomish County."
+  },
+  {
+    id: "silver-lake-everett", name: "Silver Lake (Everett)", fishery: "lake", region: "north",
+    lat: 47.8870, lng: -122.2360, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Channel catfish"],
+    months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
+    access: ["kayak","bank"],
+    launch: "Thornton A. Sullivan Park ramp.",
+    depth: "Stocked trout plus a solid largemouth and catfish population; weedy shorelines.",
+    sonar: "ClearVü the weedlines and docks; cats on the flats at night.",
+    notes: "Everett's busy in-town lake — well stocked, decent bass and summer cats."
+  },
+  {
+    id: "lake-roesiger", name: "Lake Roesiger (Snohomish)", fishery: "lake", region: "north",
+    lat: 48.0260, lng: -121.8800, area: "Lake",
+    species: ["Kokanee", "Rainbow trout", "Largemouth bass", "Smallmouth bass"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,7],
+    access: ["kayak","bank"],
+    launch: "County park ramp; deeper, cooler lake with three basins.",
+    depth: "Kokanee suspend over the deep basins 25–55 ft; bass on the rocky/weedy points.",
+    sonar: "Classic kokanee sonar lake; find the band and troll it.",
+    notes: "Best kokanee lake in central Snohomish County."
+  },
+  {
+    id: "lake-cassidy", name: "Lake Cassidy (Marysville)", fishery: "lake", region: "north",
+    lat: 48.0560, lng: -122.1010, area: "Lake",
+    species: ["Largemouth bass", "Rainbow trout", "Yellow perch", "Black crappie"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "Carry-in/cartop access (trail from the trailhead); electric only — peaceful paddle.",
+    depth: "Shallow and weedy; largemouth, crappie, and perch with spring stocker trout.",
+    sonar: "ClearVü the weed edges; crappie school off the deeper timber.",
+    notes: "Underrated warmwater lake near Marysville."
+  },
+  // --- Kitsap / South Sound ---
+  {
+    id: "kitsap-lake", name: "Kitsap Lake (Bremerton)", fishery: "lake", region: "south",
+    lat: 47.5780, lng: -122.7170, area: "Lake",
+    species: ["Largemouth bass", "Cutthroat", "Yellow perch", "Rainbow trout"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "Public ramp on the west side of Bremerton.",
+    depth: "Weedy largemouth water with cutthroat and stocked trout.",
+    sonar: "—",
+    notes: "Kitsap Peninsula's main warmwater lake."
+  },
+  {
+    id: "long-lake-kitsap", name: "Long Lake (Port Orchard)", fishery: "lake", region: "south",
+    lat: 47.4360, lng: -122.6440, area: "Lake",
+    species: ["Largemouth bass", "Rainbow trout", "Yellow perch"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "County park ramp south of Port Orchard.",
+    depth: "Long weedy lake; bass on the pads and docks, stockers in spring.",
+    sonar: "—",
+    notes: "Solid Kitsap bass-and-trout lake."
+  },
+  {
+    id: "spanaway-lake", name: "Spanaway Lake (Pierce)", fishery: "lake", region: "south",
+    lat: 47.1010, lng: -122.4330, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Black crappie"],
+    months: [3,4,5,6,7,8,9,10], prime: [4,5,6],
+    access: ["kayak","bank"],
+    launch: "Spanaway Park ramp.",
+    depth: "Stocked trout plus bass, crappie, and perch on the weedy edges.",
+    sonar: "ClearVü the docks and weed points for the panfish and bass.",
+    notes: "Heavily stocked Pierce County multi-species lake."
+  },
+  {
+    id: "lake-kapowsin", name: "Lake Kapowsin (Pierce)", fishery: "lake", region: "south",
+    lat: 47.0080, lng: -122.2300, area: "Lake",
+    species: ["Largemouth bass", "Black crappie", "Yellow perch"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "WDFW ramp; a stumpy, snaggy, flooded-forest lake — kayak heaven for bass.",
+    depth: "Standing timber and stumps everywhere, mostly under 12 ft.",
+    sonar: "ClearVü picks the stump fields and submerged wood — crappie hang off the timber.",
+    notes: "One of the most characterful bass/crappie lakes in the state. Aquatic Reserve — no internal-combustion engines."
+  },
+  {
+    id: "tanwax-lake", name: "Tanwax Lake (Pierce)", fishery: "lake", region: "south",
+    lat: 46.9230, lng: -122.2210, area: "Lake",
+    species: ["Largemouth bass", "Black crappie", "Rainbow trout", "Yellow perch"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "Resort and county access; shallow warmwater lake.",
+    depth: "Weedy and stumpy; bass, crappie, perch, plus spring trout.",
+    sonar: "ClearVü the wood and weed edges.",
+    notes: "Reliable Eatonville-area mixed-bag lake."
+  },
+  {
+    id: "ohop-lake", name: "Ohop Lake (Pierce)", fishery: "lake", region: "south",
+    lat: 46.8870, lng: -122.2360, area: "Lake",
+    species: ["Largemouth bass", "Rainbow trout", "Black crappie"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "County ramp on the long, narrow lake.",
+    depth: "Weedy shorelines for bass and crappie; stocked trout in spring.",
+    sonar: "—",
+    notes: "Eatonville-area bass and trout lake."
+  },
+  // --- SW Washington ---
+  {
+    id: "mineral-lake", name: "Mineral Lake (Lewis)", fishery: "lake", region: "sw",
+    lat: 46.7180, lng: -122.1740, area: "Lake",
+    species: ["Rainbow trout (trophy)", "Brown trout", "Largemouth bass"],
+    months: [4,5,6,9,10], prime: [4,5],
+    access: ["kayak","bank"],
+    launch: "Resort ramp with a view of Mt. Rainier.",
+    depth: "Productive trout lake — big holdover rainbows and browns cruise 8–25 ft.",
+    sonar: "Troll until you mark the trout, then stay on them; browns hold near the drop-offs.",
+    notes: "Known for kicking out trophy rainbows and the occasional big brown."
+  },
+  {
+    id: "riffe-lake", name: "Riffe Lake (Cowlitz)", fishery: "lake", region: "sw",
+    lat: 46.5170, lng: -122.3300, area: "Lake",
+    species: ["Landlocked coho (silvers)", "Smallmouth bass", "Rainbow trout"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,7],
+    access: ["kayak","boat"],
+    launch: "Mossyrock Park and Taidnapam Park ramps. Big reservoir — wind builds in the afternoon.",
+    depth: "Landlocked coho suspend and chase bait over the basin; smallmouth on the rocky shoreline.",
+    sonar: "Mark bait balls for the coho; ClearVü the rock for smallmouth.",
+    notes: "Unique landlocked-coho fishery plus strong smallmouth — a SW Washington gem."
+  },
+  {
+    id: "mayfield-lake", name: "Mayfield Lake (Cowlitz)", fishery: "lake", region: "sw",
+    lat: 46.5060, lng: -122.5800, area: "Lake",
+    species: ["Tiger musky", "Largemouth bass", "Coho", "Rainbow trout"],
+    months: [4,5,6,7,8,9,10], prime: [6,7,8],
+    access: ["kayak","boat"],
+    launch: "Mayfield Lake Park and Ike Kinswa State Park ramps.",
+    depth: "Musky prowl the weedy bays and points; bass on the wood and rock; coho/trout over the basin.",
+    sonar: "ClearVü the weed edges and points where musky ambush.",
+    notes: "One of Washington's premier tiger musky lakes — the fish of 10,000 casts lives here."
+  },
+  {
+    id: "lacamas-lake", name: "Lacamas Lake (Camas)", fishery: "lake", region: "sw",
+    lat: 45.6210, lng: -122.4060, area: "Lake",
+    species: ["Largemouth bass", "Yellow perch", "Black crappie"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "Heritage Park / Lacamas Park access near Camas.",
+    depth: "Weedy and stumpy bass water with good crappie and perch.",
+    sonar: "ClearVü the wood and weedlines.",
+    notes: "Vancouver-area bass and panfish lake."
+  },
+  {
+    id: "battle-ground-lake", name: "Battle Ground Lake", fishery: "lake", region: "sw",
+    lat: 45.8010, lng: -122.4920, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass"],
+    months: [3,4,5,6,9,10], prime: [4,5],
+    access: ["kayak","bank"],
+    launch: "Battle Ground Lake State Park (Discover Pass); small spring-fed crater lake, no gas motors.",
+    depth: "Deep little lake; stockers cruise 8–25 ft.",
+    sonar: "—",
+    notes: "Scenic, heavily stocked trout lake north of Vancouver."
+  },
+  {
+    id: "lake-sacajawea", name: "Lake Sacajawea (Longview)", fishery: "lake", region: "sw",
+    lat: 46.1450, lng: -122.9450, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Channel catfish"],
+    months: [3,4,5,6,7,8,9,10], prime: [4,5],
+    access: ["kayak","bank"],
+    launch: "In-town park lake in Longview; cartop/kayak from the bank.",
+    depth: "Long narrow urban lake; stockers, bass, and summer catfish.",
+    sonar: "—",
+    notes: "Easy in-town stocker and catfish lake."
+  },
+  // --- Whatcom / Bellingham ---
+  {
+    id: "lake-samish", name: "Lake Samish (Bellingham)", fishery: "lake", region: "north",
+    lat: 48.6720, lng: -122.4040, area: "Lake",
+    species: ["Kokanee", "Cutthroat", "Smallmouth bass", "Largemouth bass"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,7],
+    access: ["kayak","bank"],
+    launch: "County park ramp on the north end.",
+    depth: "Kokanee and cutthroat over the deep basin; smallmouth on the rocky shoreline.",
+    sonar: "Find the kokanee band; ClearVü the rock for smallmouth.",
+    notes: "Quieter alternative to Lake Whatcom with the same species mix."
+  },
+  {
+    id: "lake-terrell", name: "Lake Terrell (Whatcom)", fishery: "lake", region: "north",
+    lat: 48.8520, lng: -122.6900, area: "Lake",
+    species: ["Largemouth bass", "Yellow perch", "Black crappie"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "WDFW ramp; shallow, weedy wildlife-area lake.",
+    depth: "Thick weeds and wood — largemouth and panfish, mostly under 10 ft.",
+    sonar: "ClearVü the weed and pad edges.",
+    notes: "Whatcom County's top warmwater lake."
+  },
+  {
+    id: "fazon-lake", name: "Fazon Lake (Whatcom)", fishery: "lake", region: "north",
+    lat: 48.8470, lng: -122.3870, area: "Lake",
+    species: ["Largemouth bass", "Black crappie", "Channel catfish", "Yellow perch"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "WDFW ramp; small shallow lake.",
+    depth: "Weedy bass-crappie-catfish water under 12 ft.",
+    sonar: "ClearVü the timber and weed edges.",
+    notes: "Good little warmwater and catfish lake near Bellingham."
+  },
+  // --- Olympic Peninsula ---
+  {
+    id: "lake-sutherland", name: "Lake Sutherland (Port Angeles)", fishery: "lake", region: "peninsula",
+    lat: 48.0840, lng: -123.6700, area: "Lake",
+    species: ["Kokanee", "Cutthroat", "Largemouth bass"],
+    months: [4,5,6,7,8,9,10], prime: [5,6,7],
+    access: ["kayak","bank"],
+    launch: "Public ramp on the north shore, just east of Lake Crescent.",
+    depth: "Kokanee and cutthroat over the deep middle; bass on the weedy/rocky shoreline.",
+    sonar: "Find the kokanee band; the cutthroat ride the drop-offs.",
+    notes: "Lake Crescent's lower-key neighbor — and you can actually keep fish here."
+  },
+  // --- Eastside / Columbia Basin ---
+  {
+    id: "lake-roosevelt", name: "Lake Roosevelt (Columbia)", fishery: "lake", region: "east",
+    lat: 47.9430, lng: -118.9820, area: "Lake",
+    species: ["Walleye", "Kokanee", "Rainbow trout (triploid)", "Smallmouth bass", "White sturgeon (C&R)"],
+    months: [3,4,5,6,7,8,9,10,11], prime: [5,6,9,10],
+    access: ["kayak","boat"],
+    launch: "Spring Canyon, Keller Ferry, Kettle Falls ramps along the 130-mi reservoir. Stay in a sheltered arm in a kayak.",
+    depth: "Walleye on the gravel flats and points; kokanee and triploids over the channel; smallmouth on the rock; sturgeon in the deep holes.",
+    sonar: "The 4cv is essential here: walleye breaklines, kokanee bands, and bottom for sturgeon.",
+    notes: "The Columbia's giant impoundment — arguably WA's best all-around fishery. Huge triploid rainbows and trophy walleye."
+  },
+  {
+    id: "sprague-lake", name: "Sprague Lake", fishery: "lake", region: "east",
+    lat: 47.1700, lng: -118.0000, area: "Lake",
+    species: ["Walleye", "Largemouth bass", "Black crappie", "Yellow perch", "Rainbow trout"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","boat"],
+    launch: "Resort and public ramps off I-90. Shallow, fertile desert lake — wind comes up fast.",
+    depth: "Weedy flats and rock humps; walleye on the breaklines, bass and crappie in the cover.",
+    sonar: "ClearVü the humps and weed edges; walleye on the deeper flats.",
+    notes: "Strong walleye, bass, and crappie lake between Spokane and Moses Lake."
+  },
+  {
+    id: "lake-lenore", name: "Lake Lenore", fishery: "lake", region: "east",
+    lat: 47.5000, lng: -119.5200, area: "Lake",
+    species: ["Lahontan cutthroat (selective, big)"],
+    months: [3,4,5,9,10,11], prime: [4,10],
+    access: ["kayak","bank"],
+    launch: "WDFW access in the Grand Coulee; alkaline desert lake.",
+    depth: "Big Lahontan cutthroat cruise the shoreline shelves and drop-offs.",
+    sonar: "Sight- and structure-fish the shelves; troll/strip flies and small lures.",
+    notes: "Selective-gear, reduced-limit trophy Lahontan cutthroat fishery (often largely C&R early season). Verify current rules."
+  },
+  {
+    id: "newman-lake", name: "Newman Lake (Spokane)", fishery: "lake", region: "east",
+    lat: 47.7600, lng: -117.0500, area: "Lake",
+    species: ["Tiger musky", "Largemouth bass", "Black crappie", "Yellow perch"],
+    months: [4,5,6,7,8,9,10], prime: [6,7,8],
+    access: ["kayak","boat"],
+    launch: "County ramp east of Spokane.",
+    depth: "Weedy bays and points where tiger musky ambush; bass and panfish in the cover.",
+    sonar: "ClearVü the weed edges and points — musky territory.",
+    notes: "Premier eastside tiger musky lake, with good bass and crappie too."
+  },
+  {
+    id: "rimrock-lake", name: "Rimrock Lake (Tieton)", fishery: "lake", region: "east",
+    lat: 46.6500, lng: -121.1300, area: "Lake",
+    species: ["Kokanee", "Rainbow trout"],
+    months: [5,6,7,8,9], prime: [6,7],
+    access: ["kayak","boat"],
+    launch: "Ramps off Hwy 12 west of Yakima. Drawdown reservoir under the Cascades.",
+    depth: "Kokanee suspend 25–60 ft over the old channel; trout shallower.",
+    sonar: "Find the kokanee band and troll it.",
+    notes: "Scenic high-country kokanee reservoir."
+  },
+  {
+    id: "curlew-lake", name: "Curlew Lake (Ferry)", fishery: "lake", region: "east",
+    lat: 48.7400, lng: -118.6700, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Tiger musky", "Yellow perch"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","boat"],
+    launch: "State park and resort ramps north of Republic.",
+    depth: "Stocked trout (some big) plus bass, perch, and tiger musky in the weedy ends.",
+    sonar: "Troll for trout; ClearVü the weed bays for bass and musky.",
+    notes: "Remote NE Washington lake famous for big rainbows and a musky fishery."
+  },
+  {
+    id: "liberty-lake", name: "Liberty Lake (Spokane)", fishery: "lake", region: "east",
+    lat: 47.6400, lng: -117.0800, area: "Lake",
+    species: ["Rainbow trout", "Largemouth bass", "Yellow perch", "Black crappie"],
+    months: [4,5,6,7,8,9,10], prime: [5,6],
+    access: ["kayak","bank"],
+    launch: "County park ramp on the south end near Spokane.",
+    depth: "Stocked trout plus a weedy bass-and-panfish shoreline.",
+    sonar: "ClearVü the weed and dock lines.",
+    notes: "Spokane-area mixed-bag lake."
   }
 ];
 
