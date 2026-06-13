@@ -166,7 +166,8 @@ WF.map = (function () {
     renderHotzones();
   }
 
-  // ---- golden hot-zones (lakes) + river gold tint ----
+  // ---- golden hot-zones: water-clipped heat for lakes & Marine Areas,
+  //      gold line tint for rivers ----
   function renderHotzones() {
     if (goldLayer) goldLayer.clearLayers();
     var body = selected && WF.bodies.get(selected);
@@ -176,29 +177,50 @@ WF.map = (function () {
     });
     if (!body || !speciesFilter) return;
 
+    // rivers: tint the real river line by season + flow
     if (body.kind === "river") {
       var line = riverLines[body.id];
       if (line) {
         var r = WF.score.spotForSpecies(body.spots[0], speciesFilter);
         var col = (r.fishIn && r.score >= 55) ? GOLD : (r.score >= 40 ? "#e0a23a" : "#7a8a93");
-        var w = (r.fishIn && r.score >= 55) ? 6 : 4;
-        line.setStyle({ color: col, weight: w, opacity: 0.95 });
+        line.setStyle({ color: col, weight: (r.fishIn && r.score >= 55) ? 6 : 4, opacity: 0.95 });
         line.bringToFront();
       }
       return;
     }
-    if (body.kind !== "lake") return;
 
-    var zones = WF.hotzones.score(body, speciesFilter);
-    zones.forEach(function (z, i) {
-      if (z.heat < 0.45) return; // only show the meaningfully hotter water
-      var op = 0.14 + 0.46 * z.heat;
-      // soft glow: faint outer blob + brighter core
-      L.circle([z.zone.lat, z.zone.lng], { radius: z.zone.r * 1.7, color: GOLD, weight: 0, fillColor: GOLD, fillOpacity: op * 0.45, interactive: false }).addTo(goldLayer);
-      var core = L.circle([z.zone.lat, z.zone.lng], { radius: z.zone.r, color: "#ffe08a", weight: i === 0 ? 1.5 : 0, fillColor: GOLD, fillOpacity: op, interactive: true }).addTo(goldLayer);
-      var sp = WF.speciesById(speciesFilter);
-      core.bindTooltip((i === 0 ? "🔥 " : "") + z.zone.name + " — " + Math.round(z.heat * 100) + "%", { direction: "top", className: "zone-tip" });
-    });
+    // lakes & marine areas: build heat sources, clip to the water polygon
+    var geom = null, sources = [], label = null;
+    if (body.kind === "lake") {
+      geom = WF.WATER_SHAPES && WF.WATER_SHAPES[body.id];
+      if (!geom) return;
+      var seasonScale = WF.score.spotForSpecies(body.spots[0], speciesFilter).score / 100;
+      seasonScale = Math.max(0.18, Math.min(1, seasonScale));
+      WF.hotzones.score(body, speciesFilter).forEach(function (z) {
+        if (z.heat < 0.4) return;
+        if (!label) label = z.zone; // hottest zone, for the on-map name
+        sources.push({ lat: z.zone.lat, lng: z.zone.lng, radius: z.zone.r, heat: Math.min(0.97, z.heat * seasonScale) });
+      });
+    } else { // marine
+      geom = body.feature && body.feature.geometry;
+      if (!geom) return;
+      body.spots.forEach(function (s) {
+        var rs = WF.score.spotForSpecies(s, speciesFilter);
+        if (rs.score < 25) return;
+        sources.push({ lat: s.lat, lng: s.lng, radius: 2400, heat: Math.min(0.95, rs.score / 100) });
+      });
+    }
+    if (!sources.length) return;
+
+    var img = WF.heatmap.build(geom, sources, { maxDim: body.kind === "lake" ? 320 : 360, maxAlpha: 0.58 });
+    if (img) L.imageOverlay(img.url, img.bounds, { opacity: 1, interactive: false, className: "heat-ov" }).addTo(goldLayer);
+
+    if (label) {
+      L.marker([label.lat, label.lng], {
+        icon: L.divIcon({ className: "zone-label", html: "<span class='zlab'>🔥 " + label.name + "</span>", iconSize: [1, 1], iconAnchor: [0, 0] }),
+        interactive: false, zIndexOffset: 600
+      }).addTo(goldLayer);
+    }
   }
 
   // ---- selection ----

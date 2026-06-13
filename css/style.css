@@ -206,11 +206,12 @@ details[open].acc summary::after { content: " ▴"; }
 }
 .best-banner .bb-spot { font-weight: 700; font-size: 15.5px; }
 .best-banner .muted { font-size: 12px; }
-.zone-tip {
-  background: rgba(20,12,2,.92); color: #ffe08a; border: 1px solid rgba(255,207,58,.5);
-  border-radius: 7px; font-size: 12px; font-weight: 600; box-shadow: none;
+.zone-label .zlab {
+  position: absolute; left: 0; top: 0; transform: translate(-50%, -50%);
+  white-space: nowrap; color: #4a3500; font-weight: 800; font-size: 11px;
+  text-shadow: 0 0 3px #ffe9a8, 0 0 6px #ffe9a8, 0 0 9px #fff;
+  pointer-events: none;
 }
-.zone-tip::before { display: none; }
 .leaflet-container { font: inherit; }
 /* big water-body bubbles */
 .bb-wrap { background: none; border: 0; }
