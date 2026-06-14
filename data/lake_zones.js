@@ -72,5 +72,103 @@ WF.LAKE_ZONES = {
     { name: "Dock rows", type: "dock", lat: 47.3450, lng: -122.0400, r: 220, wind: "W" },
     { name: "Rocky points", type: "point", lat: 47.3410, lng: -122.0480, r: 220 },
     { name: "Deep hole (kokanee)", type: "deep", lat: 47.3450, lng: -122.0440, r: 260 }
+  ],
+  "wb-moses-lake": [
+    { name: "Rocky Ford arm & Crab Ck inlet", type: "inlet", lat: 47.1951, lng: -119.4241, r: 360 },
+    { name: "Parker Horn weed & docks", type: "weed", lat: 47.1796, lng: -119.3371, r: 360 },
+    { name: "Pelican Horn (south arm)", type: "weed", lat: 47.0884, lng: -119.3290, r: 360 },
+    { name: "Cascade Valley rock humps", type: "dropoff", lat: 47.1272, lng: -119.3310, r: 360 },
+    { name: "Connelly Park flats", type: "flat", lat: 47.1292, lng: -119.2925, r: 360 }
+  ],
+  "wb-potholes-reservoir": [
+    { name: "The Dunes (flooded sand & willows)", type: "weed", lat: 47.0463, lng: -119.3478, r: 400 },
+    { name: "Lind Coulee arm (walleye)", type: "dropoff", lat: 46.9929, lng: -119.2293, r: 400 },
+    { name: "O'Sullivan Dam face", type: "dropoff", lat: 46.9804, lng: -119.3478, r: 400 },
+    { name: "Main-lake humps", type: "point", lat: 47.0149, lng: -119.3505, r: 400 },
+    { name: "Medicare Beach / MarDon docks", type: "dock", lat: 47.0149, lng: -119.4043, r: 400 }
+  ],
+  "wb-banks-lake": [
+    { name: "Osborn Bay (north weed)", type: "weed", lat: 47.9384, lng: -119.0188, r: 380 },
+    { name: "Steamboat Rock points (smallmouth)", type: "point", lat: 47.8588, lng: -119.1214, r: 380 },
+    { name: "Barker Canyon rock walls", type: "dropoff", lat: 47.7983, lng: -119.1898, r: 380 },
+    { name: "Northrup / Jones Bay points", type: "point", lat: 47.7414, lng: -119.2354, r: 380 },
+    { name: "Coulee City / Dry Falls flats (walleye)", type: "flat", lat: 47.6392, lng: -119.2886, r: 380 }
+  ],
+  "wb-lake-chelan": [
+    { name: "Chelan town rock points (smallmouth)", type: "point", lat: 47.8397, lng: -120.0273, r: 400 },
+    { name: "Lakeside / Manson bays", type: "point", lat: 47.8617, lng: -120.0873, r: 400 },
+    { name: "Lower-basin drop-off (kokanee edge)", type: "dropoff", lat: 47.9221, lng: -120.1999, r: 400 },
+    { name: "25-Mile Ck inlet (kokanee staging)", type: "inlet", lat: 48.0045, lng: -120.2899, r: 400 },
+    { name: "Mid-lake deep (mackinaw)", type: "deep", lat: 48.0815, lng: -120.4624, r: 400 }
+  ],
+  "wb-lake-roosevelt": [
+    { name: "Spring Canyon flats (walleye)", type: "dropoff", lat: 47.9494, lng: -118.8222, r: 440 },
+    { name: "Keller Ferry / Sanpoil mouth", type: "point", lat: 47.9381, lng: -118.6900, r: 440 },
+    { name: "Mid-channel band (kokanee/triploid)", type: "deep", lat: 48.1202, lng: -118.2574, r: 440 },
+    { name: "Gravel points (smallmouth)", type: "point", lat: 48.3365, lng: -118.1613, r: 440 },
+    { name: "Kettle Falls / Colville inlet", type: "inlet", lat: 48.5983, lng: -118.1252, r: 440 }
+  ],
+  "wb-newman-lake": [
+    { name: "North weed bay (musky/largemouth)", type: "weed", lat: 47.7906, lng: -117.0997, r: 200 },
+    { name: "Thompson Ck inlet", type: "inlet", lat: 47.7894, lng: -117.0931, r: 200 },
+    { name: "West-shore weedline", type: "weed", lat: 47.7768, lng: -117.1115, r: 200, wind: "E" },
+    { name: "Dam-end docks (crappie)", type: "dock", lat: 47.7650, lng: -117.0979, r: 200 },
+    { name: "Deep middle (trout)", type: "deep", lat: 47.7768, lng: -117.0997, r: 200 }
+  ],
+  "wb-curlew-lake": [
+    { name: "North inlet (Curlew Ck)", type: "inlet", lat: 48.7579, lng: -118.6654, r: 260 },
+    { name: "State-park west docks", type: "dock", lat: 48.7353, lng: -118.6715, r: 260, wind: "E" },
+    { name: "Deep middle (trophy rainbow)", type: "deep", lat: 48.7345, lng: -118.6654, r: 260 },
+    { name: "South weed bay (bass/musky)", type: "weed", lat: 48.7089, lng: -118.6664, r: 260 }
+  ],
+  "wb-lake-kapowsin": [
+    { name: "North standing timber", type: "weed", lat: 46.9838, lng: -122.2219, r: 150 },
+    { name: "East stump flats", type: "flat", lat: 46.9815, lng: -122.2102, r: 150 },
+    { name: "West-shore docks & pads", type: "dock", lat: 46.9761, lng: -122.2301, r: 150 },
+    { name: "South timber", type: "weed", lat: 46.9670, lng: -122.2246, r: 150 },
+    { name: "Old river channel (deep)", type: "deep", lat: 46.9764, lng: -122.2215, r: 150 }
+  ],
+  "wb-spanaway-lake": [
+    { name: "North park docks", type: "dock", lat: 47.1168, lng: -122.4483, r: 150 },
+    { name: "West-shore drop-off", type: "dropoff", lat: 47.1106, lng: -122.4532, r: 150, wind: "E" },
+    { name: "South weed bay", type: "weed", lat: 47.1042, lng: -122.4483, r: 150 },
+    { name: "Deep middle (trout)", type: "deep", lat: 47.1100, lng: -122.4483, r: 150 }
+  ],
+  "wb-lake-wenatchee": [
+    { name: "Upper inlet (White/Little Wenatchee R)", type: "inlet", lat: 47.8247, lng: -120.8132, r: 360 },
+    { name: "Deep middle (sockeye/kokanee)", type: "deep", lat: 47.8238, lng: -120.7839, r: 360 },
+    { name: "South-shore drop", type: "dropoff", lat: 47.8186, lng: -120.7828, r: 360 },
+    { name: "Outlet / state park (SE)", type: "dropoff", lat: 47.8182, lng: -120.7445, r: 360 }
+  ],
+  "wb-lake-whatcom": [
+    { name: "North basin (Bloedel Donovan, kokanee)", type: "deep", lat: 48.7509, lng: -122.3953, r: 360 },
+    { name: "Strawberry Pt rock (smallmouth)", type: "point", lat: 48.7299, lng: -122.3415, r: 360 },
+    { name: "Geneva docks", type: "dock", lat: 48.7211, lng: -122.3016, r: 360 },
+    { name: "South basin deep (Sudden Valley)", type: "deep", lat: 48.6879, lng: -122.2964, r: 360 }
+  ],
+  "wb-rimrock-lake": [
+    { name: "Dam end (deep, kokanee)", type: "deep", lat: 46.6387, lng: -121.1448, r: 340 },
+    { name: "North Fork Tieton inlet", type: "inlet", lat: 46.6387, lng: -121.2416, r: 340 },
+    { name: "South-shore points", type: "point", lat: 46.6366, lng: -121.1801, r: 340 },
+    { name: "Main basin (kokanee troll)", type: "deep", lat: 46.6387, lng: -121.1817, r: 340 }
+  ],
+  "wb-liberty-lake": [
+    { name: "North lily/weed bay", type: "weed", lat: 47.6512, lng: -117.0779, r: 210 },
+    { name: "West-shore drop-off", type: "dropoff", lat: 47.6447, lng: -117.0890, r: 210, wind: "E" },
+    { name: "County-park docks (south)", type: "dock", lat: 47.6374, lng: -117.0786, r: 210 },
+    { name: "Deep middle (trout/kokanee)", type: "deep", lat: 47.6447, lng: -117.0779, r: 210 }
+  ],
+  "wb-riffe-lake": [
+    { name: "Mossyrock Dam end (deep)", type: "deep", lat: 46.4717, lng: -122.1806, r: 400 },
+    { name: "Mid-lake rock points (smallmouth)", type: "point", lat: 46.4878, lng: -122.2915, r: 400 },
+    { name: "Riffe narrows points", type: "point", lat: 46.5146, lng: -122.3587, r: 400 },
+    { name: "Upper Cowlitz inlet (west)", type: "inlet", lat: 46.5297, lng: -122.4142, r: 400 }
+  ],
+  "wb-sprague-lake": [
+    { name: "NE weedy flats & resort", type: "weed", lat: 47.2806, lng: -118.0353, r: 380 },
+    { name: "SW rock humps (walleye)", type: "dropoff", lat: 47.2442, lng: -118.0941, r: 380 },
+    { name: "Main-lake humps", type: "point", lat: 47.2551, lng: -118.0734, r: 380 },
+    { name: "North bay docks", type: "dock", lat: 47.2653, lng: -118.0631, r: 380 },
+    { name: "South weed bay (bass/crappie)", type: "weed", lat: 47.2468, lng: -118.0714, r: 380 }
   ]
 };

@@ -990,7 +990,7 @@ WF.SPOTS = [
   },
   {
     id: "lake-chelan", name: "Lake Chelan (lower basin)", fishery: "lake", region: "east",
-    lat: 48.0380, lng: -120.3573, area: "Lake",
+    lat: 47.8430, lng: -120.0330, area: "Lake",
     species: ["Kokanee", "Lake trout (mackinaw)", "Cutthroat", "Smallmouth bass"],
     months: [3,4,5,6,7,8,9,10,11], prime: [4,5,10],
     access: ["kayak","boat"],
@@ -1144,6 +1144,40 @@ WF.SPOTS = [
     depth: "—", sonar: "—",
     notes: "SW Washington workhorse — strong hatchery returns of springers, summer steelhead, and coho."
   },
+  // --- Eastside rivers ---
+  {
+    id: "wenatchee-river", name: "Wenatchee River", fishery: "river", region: "east",
+    lat: 47.5150, lng: -120.4700, area: "Wenatchee R.",
+    species: ["Summer steelhead (C&R/selective, fall)", "Sockeye (summer, when open)", "Rainbow/cutthroat trout (C&R)", "Whitefish (winter)"],
+    months: [6,7,8,9,10,11], prime: [9,10],
+    gauge: "12459000", flow: { good: [1200, 4500], high: 9000 },
+    access: ["bank","kayak"],
+    launch: "Lower river through Leavenworth, Peshastin, and Cashmere down to the Columbia at Wenatchee. Pullouts off Hwy 2/97; floatable in the lower stretches.",
+    depth: "—", sonar: "—",
+    notes: "Eastside gem: a quota summer-steelhead fishery (announced each fall), occasional sockeye/Chinook seasons off the strong Columbia returns, and year-round C&R trout. Verify steelhead and salmon openings — they're not automatic."
+  },
+  {
+    id: "spokane-river", name: "Spokane River (redband)", fishery: "river", region: "east",
+    lat: 47.6850, lng: -117.2400, area: "Spokane R.",
+    species: ["Wild redband rainbow (C&R)", "Whitefish"],
+    months: [3,4,5,6,7,8,9,10,11], prime: [5,6,9,10],
+    gauge: "12422500", flow: { good: [1000, 4000], high: 8000 },
+    access: ["bank","kayak"],
+    launch: "Runs right through Spokane — wade or raft the in-town redband water from the Idaho line down through the Bowl and Pitcher. Many park accesses (Plante's Ferry, Upriver, Riverside).",
+    depth: "—", sonar: "—",
+    notes: "Urban blue-ribbon wild redband trout — strictly CATCH-AND-RELEASE, selective gear. Big rainbows on nymphs and streamers; best when flows drop in late spring and fall. Note fish-consumption advisories (C&R anyway)."
+  },
+  {
+    id: "grande-ronde", name: "Grande Ronde River (lower)", fishery: "river", region: "east",
+    lat: 46.0390, lng: -117.1375, area: "Grande Ronde R.",
+    species: ["Summer/fall steelhead (Oct–Apr)", "Smallmouth bass (summer)", "Whitefish"],
+    months: [10,11,12,1,2,3,4], prime: [10,11,3],
+    gauge: "13333000", flow: { good: [1500, 5000], high: 8000 },
+    access: ["bank","kayak"],
+    launch: "WA's far-SE corner: the lower Grande Ronde near Boggans Oasis (Hwy 129) down to the Snake at Heller Bar. Drift- or jet-boat country; bank access at the bridges. Long haul from the westside.",
+    depth: "—", sonar: "—",
+    notes: "Classic swing-the-fly steelhead river — A-run and B-run fish from fall into spring. Summer brings excellent smallmouth in the lower canyon. Verify steelhead seasons and any hatchery-only/retention rules each year."
+  },
 
   // ================= EVEN MORE LAKES =================
   // --- Seattle Eastside & close-in ---
@@ -1160,7 +1194,7 @@ WF.SPOTS = [
   },
   {
     id: "beaver-lake", name: "Beaver Lake (Sammamish)", fishery: "lake", region: "central",
-    lat: 47.5850, lng: -122.0095, area: "Lake",
+    lat: 47.5908, lng: -121.9968, area: "Lake",
     species: ["Largemouth bass", "Rainbow trout", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1272,7 +1306,7 @@ WF.SPOTS = [
   },
   {
     id: "long-lake-kitsap", name: "Long Lake (Port Orchard)", fishery: "lake", region: "south",
-    lat: 47.4256, lng: -122.6564, area: "Lake",
+    lat: 47.4854, lng: -122.5885, area: "Lake",
     species: ["Largemouth bass", "Rainbow trout", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1305,7 +1339,7 @@ WF.SPOTS = [
   },
   {
     id: "tanwax-lake", name: "Tanwax Lake (Pierce)", fishery: "lake", region: "south",
-    lat: 46.9230, lng: -122.2210, area: "Lake",
+    lat: 46.9470, lng: -122.2708, area: "Lake",
     species: ["Largemouth bass", "Black crappie", "Rainbow trout", "Yellow perch"],
     months: [3,4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","bank"],
@@ -1441,7 +1475,7 @@ WF.SPOTS = [
   // --- Eastside / Columbia Basin ---
   {
     id: "lake-roosevelt", name: "Lake Roosevelt (Columbia)", fishery: "lake", region: "east",
-    lat: 48.0999, lng: -118.2596, area: "Lake",
+    lat: 47.9400, lng: -118.8200, area: "Lake",
     species: ["Walleye", "Kokanee", "Rainbow trout (triploid)", "Smallmouth bass", "White sturgeon (C&R)"],
     months: [3,4,5,6,7,8,9,10,11], prime: [5,6,9,10],
     access: ["kayak","boat"],
@@ -1452,7 +1486,7 @@ WF.SPOTS = [
   },
   {
     id: "sprague-lake", name: "Sprague Lake", fishery: "lake", region: "east",
-    lat: 47.2350, lng: -118.1000, area: "Lake",
+    lat: 47.2551, lng: -118.0738, area: "Lake",
     species: ["Walleye", "Largemouth bass", "Black crappie", "Yellow perch", "Rainbow trout"],
     months: [4,5,6,7,8,9,10], prime: [5,6],
     access: ["kayak","boat"],
@@ -1515,6 +1549,232 @@ WF.SPOTS = [
     depth: "Stocked trout plus a weedy bass-and-panfish shoreline.",
     sonar: "ClearVü the weed and dock lines.",
     notes: "Spokane-area mixed-bag lake."
+  },
+
+  // ========= ADDITIONAL SALTWATER SPOTS (filling thin Marine Areas) =========
+  // --- MA 1 (Columbia mouth / Ilwaco) ---
+  {
+    id: "cape-disappointment", name: "Cape Disappointment / North Jetty", fishery: "coast", region: "coast",
+    area: "MA 1", lat: 46.2784, lng: -124.0772,
+    species: ["Black rockfish", "Lingcod", "Surfperch", "Salmon (Aug, nearby)"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6,7],
+    tides: ["incoming","high slack"], shelter: ["E","NE"],
+    access: ["bank","kayak"],
+    launch: "Jetty and Waikiki Beach access in Cape Disappointment State Park. Kayaks stay INSIDE Baker Bay — the bar and jetty tips are deadly.",
+    depth: "Jetty boulders drop to 20–40 ft; rockfish and lings hold in the rock.",
+    sonar: "—",
+    notes: "Coastal rockfish retention is open here, unlike Puget Sound. Discovery Pass needed to park. The open jetty is exposed to swell — pick calm days."
+  },
+  {
+    id: "baker-bay-ilwaco", name: "Ilwaco / Baker Bay", fishery: "coast", region: "coast",
+    area: "MA 1", lat: 46.3226, lng: -124.0639,
+    species: ["Crab (in season)", "Surfperch", "Fall salmon (staging, Aug–Sep)"],
+    months: [5,6,7,8,9,10], prime: [8,9],
+    tides: ["incoming","high slack"], shelter: ["S","SW","W"],
+    access: ["kayak","boat","pier"],
+    launch: "Port of Ilwaco ramps inside Baker Bay — protected water behind the cape, the kayak-safe side of MA 1.",
+    depth: "Shallow bay 5–25 ft; crab the flats, fish the channel edges on the flood.",
+    sonar: "ClearVü the channel edges and oyster ground.",
+    notes: "The sheltered alternative to the Buoy 10 circus next door. Good crab-and-perch paddle; fall kings stage through on big tides."
+  },
+  // --- MA 2 (Westport / Grayland coast) ---
+  {
+    id: "half-moon-bay", name: "Half Moon Bay (Westport)", fishery: "coast", region: "coast",
+    area: "MA 2", lat: 46.8959, lng: -124.1298,
+    species: ["Surfperch", "Black rockfish", "Salmon (Aug, nearby)"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6,7],
+    tides: ["incoming","high slack"], shelter: ["N","NE","E"],
+    access: ["kayak","bank"],
+    launch: "The protected cove tucked behind Westport's south jetty — the one kayak-workable launch in MA 2. Beach launch at the cove.",
+    depth: "Sand and scattered rock 10–30 ft; perch off the beach, rockfish on the jetty rock.",
+    sonar: "—",
+    notes: "Half Moon Bay blocks the prevailing NW wind/swell. Stay inside — the jetty mouth and bar are no kayak water."
+  },
+  {
+    id: "twin-harbors-surf", name: "Twin Harbors / Grayland Surf", fishery: "coast", region: "coast",
+    area: "MA 2", lat: 46.8286, lng: -124.1094,
+    species: ["Redtail surfperch", "Razor clams (announced digs)"],
+    months: [3,4,5,6,7,8,9,10], prime: [5,6,7],
+    tides: ["incoming"], shelter: [],
+    access: ["bank"],
+    launch: "Drive-up surf access at Twin Harbors / Grayland Beach state parks. Fish the incoming over the first trough.",
+    depth: "—", sonar: "—",
+    notes: "Sand shrimp or Gulp on a hi-lo rig. Razor clam digs are announced dig-by-dig by WDFW — see the Regs tab."
+  },
+  // --- MA 2-1 (Willapa Bay) ---
+  {
+    id: "tokeland-willapa", name: "Tokeland / North Cove (Willapa)", fishery: "coast", region: "coast",
+    area: "MA 2-1", lat: 46.7080, lng: -123.9670,
+    species: ["Crab (in season)", "Surfperch", "Fall chinook (Aug–Sep)", "Sturgeon (C&R)"],
+    months: [6,7,8,9,10], prime: [9],
+    tides: ["incoming","high slack"], shelter: ["S","SE","E"],
+    access: ["kayak","boat","pier"],
+    launch: "Tokeland marina and the Toke Point jetty — the protected north shore of Willapa Bay.",
+    depth: "Shallow bay 8–30 ft; crab the flats, troll the channel edges on the flood for fall kings.",
+    sonar: "ClearVü the channel edges; fish ride them like highways at mid-tide.",
+    notes: "Famous Dungeness crab port and an under-pressured fall king fishery with real kayak potential on calm days."
+  },
+  // --- MA 2-2 (Grays Harbor inside) ---
+  {
+    id: "johns-river", name: "Johns River (Grays Harbor)", fishery: "coast", region: "coast",
+    area: "MA 2-2", lat: 46.8911, lng: -123.9845,
+    species: ["Fall chinook (Sep–Oct)", "Coho (Oct)", "Sea-run cutthroat"],
+    months: [9,10,11], prime: [10],
+    tides: ["incoming","high slack"], shelter: ["W","SW","NW"],
+    access: ["kayak","boat"],
+    launch: "WDFW Johns River ramp on the south side of Grays Harbor — sheltered estuary water for a kayak in fair weather.",
+    depth: "Troll the channel edges 12–35 ft on the flood as fish push in.",
+    sonar: "Channel edge + a tide line is the picture; fall fish stack at the mouth on the incoming.",
+    notes: "Quiet estuary kings and coho away from the Westport crowds. Mind the big tidal exchange."
+  },
+  // --- MA 3 (La Push / ocean) ---
+  {
+    id: "rialto-beach", name: "Rialto Beach / Quillayute Mouth", fishery: "coast", region: "coast",
+    area: "MA 3", lat: 47.9180, lng: -124.6400,
+    species: ["Surfperch", "Fall coho (river mouth, Oct)", "Lingcod (offshore days)"],
+    months: [5,6,7,8,9,10], prime: [9,10],
+    tides: ["incoming"], shelter: ["E"],
+    access: ["bank","kayak"],
+    launch: "Rialto Beach (NPS) on the north side of the Quillayute mouth. Surf-fish the beach; the river mouth is the only kayak-sane water and only on calm days.",
+    depth: "—", sonar: "—",
+    notes: "Wild, exposed Olympic coast — ocean swell rules your day. Fall coho stage in the Quillayute; perch off the beach the rest of the season. NW Forest/NPS pass to park."
+  },
+  // --- MA 4 (Neah Bay) ---
+  {
+    id: "cape-flattery", name: "Cape Flattery / Tatoosh", fishery: "coast", region: "peninsula",
+    area: "MA 4", lat: 48.3870, lng: -124.7280,
+    species: ["Lingcod", "Black rockfish", "Halibut (May–Jun days)", "Chinook/Coho (summer)"],
+    months: [4,5,6,7,8,9], prime: [6,7,8],
+    tides: ["high slack","incoming"], shelter: [],
+    access: ["boat","kayak"],
+    launch: "The NW tip of the Lower 48, off Neah Bay. Expert-only kayak water — run from the Neah Bay ramp and only on a flat ocean.",
+    depth: "Pinnacles, rock, and kelp 20–100 ft; world-class lingcod and rockfish on the structure.",
+    sonar: "Jagged rock + bait = drop a jig; lings sit on the pressure side of the current.",
+    notes: "Coastal rules — rockfish ARE retainable in MA 4. Makah Recreation Pass required. Ocean swell and current make this advanced water."
+  },
+  {
+    id: "hobuck-beach", name: "Hobuck / Makah Bay Surf", fishery: "coast", region: "peninsula",
+    area: "MA 4", lat: 48.3150, lng: -124.6850,
+    species: ["Redtail surfperch", "Black rockfish (rocks)"],
+    months: [4,5,6,7,8,9,10], prime: [6,7,8],
+    tides: ["incoming"], shelter: ["E","SE"],
+    access: ["bank","kayak"],
+    launch: "Hobuck Beach on the Makah reservation (rec pass required). Long sandy surf with rock ends.",
+    depth: "—", sonar: "—",
+    notes: "Mellow surfperch beach when the cape is too rough, plus rockfish off the rocky points on calm days. A surfing beach — watch the rips."
+  },
+  // --- MA 5 (Sekiu / Clallam Bay) ---
+  {
+    id: "pillar-point", name: "Pillar Point", fishery: "salt", region: "peninsula",
+    area: "MA 5", lat: 48.2180, lng: -124.1050,
+    species: ["Chinook/Coho (summer)", "Halibut (May days)", "Lingcod"],
+    months: [3,5,6,7,8,9], prime: [7,8],
+    tides: ["incoming","outgoing"], shelter: ["S","SE","SW"],
+    access: ["kayak","boat"],
+    launch: "County ramp in the lee of Pillar Point — a protected pocket on the central Strait east of Sekiu.",
+    depth: "Salmon 30–90 ft off the point; the Pysht/eelgrass flats hold bait.",
+    sonar: "Follow the bait off the point; summer salmon ride the tide seams.",
+    notes: "A quieter, sheltered alternative to Sekiu when the westerly is up. MA 5 salmon is summer-only and quota-managed — verify."
+  },
+  {
+    id: "clallam-bay", name: "Clallam Bay (protected)", fishery: "salt", region: "peninsula",
+    area: "MA 5", lat: 48.2564, lng: -124.2598,
+    species: ["Chinook/Coho (summer)", "Sea-run cutthroat", "Lingcod"],
+    months: [3,5,6,7,8,9,10], prime: [7,8],
+    tides: ["incoming","outgoing"], shelter: ["S","SE","SW"],
+    access: ["kayak","boat","beach"],
+    launch: "The crescent bay just east of Sekiu — a sheltered cove that lets a kayak pick calm windows on the Strait.",
+    depth: "30–80 ft outside the kelp; salmon on the bait, lings on the rock ends.",
+    sonar: "Kelp edge + bait = salmon; rocky points hold the lingcod.",
+    notes: "Twin to Sekiu but quieter. Same summer-only MA 5 salmon rules apply — check before you go."
+  },
+  // --- MA 6 (Eastern Strait / Dungeness) ---
+  {
+    id: "dungeness-bay", name: "Dungeness Spit & Bay", fishery: "salt", region: "peninsula",
+    area: "MA 6", lat: 48.1550, lng: -123.1100,
+    species: ["Coho (Aug–Sep)", "Crab (in season)", "Sea-run cutthroat", "Blackmouth"],
+    months: [2,3,7,8,9,10], prime: [8,9],
+    tides: ["incoming","outgoing"], shelter: ["S","SW","W"],
+    access: ["kayak","boat"],
+    launch: "Cline Spit / Oyster House ramps inside Dungeness Bay — the spit shelters one of the best kayak crab-and-coho paddles on the Strait.",
+    depth: "Eelgrass flats 10–30 ft inside; the spit's outer edge drops into Strait current and bait.",
+    sonar: "Work the spit's outer edge for staging coho; crab the inner eelgrass flats.",
+    notes: "Dungeness crab heaven (its namesake). The spit blocks the prevailing westerly — a forgiving kayak bay. Refuge boundaries apply on the spit."
+  },
+  // --- MA 7 (Rosario / Deception Pass) ---
+  {
+    id: "deception-pass", name: "Deception Pass (Bowman Bay)", fishery: "salt", region: "north",
+    area: "MA 7", lat: 48.4203, lng: -122.6709,
+    species: ["Lingcod (May–Jun 15)", "Greenling", "Salmon (seasonal)", "Sea-run cutthroat"],
+    months: [5,6,7,8,9], prime: [5,6],
+    tides: ["high slack","low slack"], shelter: ["S","SE"],
+    access: ["kayak","boat"],
+    launch: "Bowman Bay ramp on the west side of Deception Pass State Park. The Pass itself rips ferociously — fish the slacks only.",
+    depth: "Rock walls and boulders 20–80 ft around Rosario Head and the pass; prime kayak lingcod.",
+    sonar: "Jagged rock tight to current = lingcod; they hold on the pressure side of the boulders.",
+    notes: "Rockfish retention is closed in MA 7 — lingcod and greenling only. Deception Pass current is no-joke; plan your day around slack water."
+  },
+  // --- MA 8-1 (Saratoga Passage / Skagit Bay) ---
+  {
+    id: "camano-saratoga", name: "Camano Island / Saratoga Passage", fishery: "salt", region: "north",
+    area: "MA 8-1", lat: 48.1155, lng: -122.5026,
+    species: ["Coho (Aug–Sep)", "Blackmouth (winter, when open)", "Sea-run cutthroat", "Crab (in season)"],
+    months: [1,2,7,8,9,10], prime: [8,9],
+    tides: ["incoming","outgoing"], shelter: ["E","NE","SE"],
+    access: ["kayak","boat","beach"],
+    launch: "Camano Island State Park and Cama Beach ramps on Saratoga Passage — protected, forgiving kayak water.",
+    depth: "Beach drop-offs to 60–120 ft; troll the 40–80 ft shelf for coho and winter blackmouth.",
+    sonar: "Find the bait on the shelf; cutthroat hug the beaches, salmon ride the drop.",
+    notes: "Saratoga Passage is one of the calmer salmon paddles in the north Sound. Check MA 8-1 salmon seasons — they open and close by quota."
+  },
+  {
+    id: "oak-harbor-crescent", name: "Oak Harbor / Crescent Harbor", fishery: "salt", region: "north",
+    area: "MA 8-1", lat: 48.2900, lng: -122.6100,
+    species: ["Sea-run cutthroat", "Crab (in season)", "Coho (Sep)", "Flounder"],
+    months: [6,7,8,9,10], prime: [8,9],
+    tides: ["incoming","outgoing"], shelter: ["S","SW","W"],
+    access: ["kayak","boat"],
+    launch: "Oak Harbor and Crescent Harbor (Whidbey) ramps — shallow, protected harbors easy for a kayak.",
+    depth: "Soft bottom 10–40 ft; crab the flats, fish the eelgrass edges for cutthroat.",
+    sonar: "—",
+    notes: "Sheltered Whidbey harbors — a mellow crab-and-cutthroat paddle, good when Saratoga Passage is breezy."
+  },
+  {
+    id: "cornet-bay", name: "Cornet Bay / Hope Island", fishery: "salt", region: "north",
+    area: "MA 8-1", lat: 48.4050, lng: -122.6200,
+    species: ["Lingcod (May–Jun 15)", "Sea-run cutthroat", "Crab (in season)"],
+    months: [5,6,7,8,9], prime: [5,6],
+    tides: ["high slack","low slack"], shelter: ["W","NW"],
+    access: ["kayak","boat"],
+    launch: "Cornet Bay ramp (Deception Pass State Park, east side). Quick access to Hope/Skagit Island rock without crossing the pass.",
+    depth: "Rock and current 20–70 ft around Hope and Skagit islands; lingcod on the structure at slack.",
+    sonar: "Rock tight to current holds the lings; fish the slack windows.",
+    notes: "The protected east-side base for Deception Pass lingcod. Rockfish closed in MA 8-1 (lingcod/greenling only). Current still runs hard near the islands."
+  },
+  // --- MA 12 (Hood Canal) ---
+  {
+    id: "quilcene-dabob", name: "Quilcene / Dabob Bay", fishery: "salt", region: "south",
+    area: "MA 12", lat: 47.7805, lng: -122.8414,
+    species: ["Spot shrimp (May days)", "Sea-run cutthroat", "Coho (Sep)", "Crab (in season)"],
+    months: [5,7,8,9,10], prime: [5,9],
+    tides: ["incoming","outgoing"], shelter: ["S","SW","SE"],
+    access: ["kayak","boat"],
+    launch: "Point Whitney and Quilcene ramps on Dabob Bay — the deep north arm of Hood Canal and a prime spot-shrimp bay.",
+    depth: "Shrimp gear drops to 200–360 ft in the bay's deep holes; cutthroat work the shallow beaches.",
+    sonar: "The 4cv finds the deep flat bottom for shrimp pots; mark the shelf break for cutthroat.",
+    notes: "Hood Canal spot-shrimp days (a handful in May) are a Northwest event — Dabob Bay is the epicenter. Strictly date-limited; verify the days."
+  },
+  {
+    id: "potlatch-skokomish", name: "Potlatch / Annas Bay", fishery: "salt", region: "south",
+    area: "MA 12", lat: 47.3636, lng: -123.1586,
+    species: ["Chum (Nov)", "Coho (Sep–Oct)", "Sea-run cutthroat", "Shrimp (May days)"],
+    months: [5,9,10,11], prime: [11],
+    tides: ["incoming","high slack"], shelter: ["W","SW","NW"],
+    access: ["kayak","beach","boat"],
+    launch: "Potlatch State Park beach and Skokomish delta access at the Great Bend of Hood Canal — easy beach launch.",
+    depth: "Shallow Skokomish delta flats 5–25 ft; fish stage off the river mouth before the run.",
+    sonar: "—",
+    notes: "The Great Bend stacks chum in November and coho earlier — a famous shore and kayak fishery. Pairs with the Hoodsport hatchery zone a few minutes north."
   }
 ];
 
@@ -1539,6 +1799,14 @@ WF.SPOT_STATIONS = {
   "neah-bay": "9443090", "la-push": "9442396",
   "westport-jetty": "9441102", "ocean-shores-surf": "9441156",
   "grays-harbor": "9441187", "willapa-bay": "9440910",
-  "buoy-10": "9440581", "long-beach-surf": "9440581"
+  "buoy-10": "9440581", "long-beach-surf": "9440581",
+  "cape-disappointment": "9440581", "baker-bay-ilwaco": "9440581",
+  "half-moon-bay": "9441102", "twin-harbors-surf": "9441102",
+  "tokeland-willapa": "9440910", "johns-river": "9441187",
+  "rialto-beach": "9442396", "cape-flattery": "9443090", "hobuck-beach": "9443090",
+  "pillar-point": "9443361", "clallam-bay": "9443361", "dungeness-bay": "9444122",
+  "deception-pass": "9448794", "cornet-bay": "9448794",
+  "camano-saratoga": "9448094", "oak-harbor-crescent": "9448094",
+  "quilcene-dabob": "9445303", "potlatch-skokomish": "9445478"
 };
 WF.SPOTS.forEach(function (s) { if (WF.SPOT_STATIONS[s.id]) s.station = WF.SPOT_STATIONS[s.id]; });

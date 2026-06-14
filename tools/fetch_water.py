@@ -91,6 +91,9 @@ RIVERS = [
     ("wb-yakima-river", "Yakima River", 47.00, -120.55, 0.22),
     ("wb-klickitat-river", "Klickitat River", 45.85, -121.18, 0.18),
     ("wb-nf-lewis-river", "Lewis River", 45.98, -122.55, 0.14),
+    ("wb-wenatchee-river", "Wenatchee River", 47.52, -120.49, 0.18),
+    ("wb-spokane-river", "Spokane River", 47.70, -117.28, 0.27),
+    ("wb-grande-ronde", "Grande Ronde River", 46.05, -117.10, 0.20),
 ]
 
 
