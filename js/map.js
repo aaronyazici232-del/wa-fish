@@ -212,12 +212,44 @@ WF.map = (function () {
     }
     if (!sources.length) return;
 
-    var img = WF.heatmap.build(geom, sources, { maxDim: body.kind === "lake" ? 320 : 360, maxAlpha: 0.58 });
+    var img = WF.heatmap.build(geom, sources, {
+      maxDim: body.kind === "lake" ? 320 : 360,    // keep the per-pixel water mask cheap on huge polygons
+      maxAlpha: body.kind === "lake" ? 0.86 : 0.78 // lakes boldest; marine calmer (broad 2400m blobs)
+    });
     if (img) L.imageOverlay(img.url, img.bounds, { opacity: 1, interactive: false, className: "heat-ov" }).addTo(goldLayer);
 
     if (label) {
-      L.marker([label.lat, label.lng], {
-        icon: L.divIcon({ className: "zone-label", html: "<span class='zlab'>🔥 " + label.name + "</span>", iconSize: [1, 1], iconAnchor: [0, 0] }),
+      // Seat the hottest-zone name on open water NEAR its gold: the lake's pole
+      // of inaccessibility (widest water), biased to the candidate nearest the
+      // hot zone, with the whole pill box kept over water. Wrapped (compact)
+      // fallback for long names on narrow lakes, sized by the real line count.
+      var pole = WF.heatmap.poleOfInaccessibility(geom);
+      var aLat = label.lat, aLng = label.lng, compact = false; // safe fallback
+      if (pole) {
+        var nm = label.name || "";
+        // .zlab is 800/11px (~6.4px/char) + ~16px flame emoji + pill padding.
+        var pxW = nm.length * 6.4 + 22;
+        // Web-Mercator meters/pixel at this latitude and zoom.
+        var mPerPx = 40075016.686 * Math.cos(pole.lat * Math.PI / 180) /
+                     Math.pow(2, map.getZoom() + 8);
+        var halfHeightM = (11 / 2 + 4) * mPerPx; // one 11px line + pill pad
+        var prefer = { lng: label.lng, lat: label.lat };
+        var lp = WF.heatmap.labelPoint(geom, pole, (pxW / 2) * mPerPx, halfHeightM, prefer);
+        if (!lp.fits) {
+          // wrap: cap width at the 116px max-width pill, grow height by line count
+          var lines = Math.max(2, Math.ceil(pxW / 116));
+          var compactHalfW = Math.min((pxW / 2) * mPerPx, 58 * mPerPx);
+          lp = WF.heatmap.labelPoint(geom, pole, compactHalfW, halfHeightM * lines, prefer);
+          compact = true;
+        }
+        aLat = lp.lat; aLng = lp.lng;
+      }
+      L.marker([aLat, aLng], {
+        icon: L.divIcon({
+          className: "zone-label" + (compact ? " compact" : ""),
+          html: "<span class='zlab'>🔥 " + label.name + "</span>",
+          iconSize: [1, 1], iconAnchor: [0, 0]
+        }),
         interactive: false, zIndexOffset: 600
       }).addTo(goldLayer);
     }

@@ -208,9 +208,37 @@ details[open].acc summary::after { content: " ▴"; }
 .best-banner .muted { font-size: 12px; }
 .zone-label .zlab {
   position: absolute; left: 0; top: 0; transform: translate(-50%, -50%);
-  white-space: nowrap; color: #4a3500; font-weight: 800; font-size: 11px;
-  text-shadow: 0 0 3px #ffe9a8, 0 0 6px #ffe9a8, 0 0 9px #fff;
+  display: inline-block; white-space: nowrap; text-align: center;
+  padding: 3px 9px; border-radius: 999px;
+  color: #4a3500; font-weight: 800; font-size: 11px; line-height: 1.15;
+  background: rgba(255, 249, 230, 0.66);
+  box-shadow: 0 1px 4px rgba(120, 80, 0, 0.30),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  text-shadow: 0 0 2px #fff, 0 0 4px #ffe9a8;
   pointer-events: none;
+}
+/* compact: let long names wrap so the box's horizontal extent shrinks and the
+   label stays over open water on narrow lakes. */
+.zone-label.compact .zlab {
+  white-space: normal; max-width: 116px; word-break: normal;
+}
+/* golden probability heat overlay: saturate + a slow, low-amplitude opacity
+   pulse make the gold eye-catching. NO drop-shadow — that would paint a halo
+   OUTSIDE the water-clipped canvas pixels and bleed gold onto shore; the
+   canvas box-blur already supplies the in-water feathered glow. Leaflet sets
+   inline opacity:1 on the img, so the pulse keyframes use !important. */
+.heat-ov {
+  filter: saturate(1.4) brightness(1.06);
+  animation: heatGlow 3.4s ease-in-out infinite;
+}
+/* pulse OPACITY only — animating filter every frame is a needless GPU/battery
+   cost on the phone; the static saturate/brightness above already boosts it. */
+@keyframes heatGlow {
+  0%, 100% { opacity: 0.84 !important; }
+  50%      { opacity: 1 !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heat-ov { animation: none; opacity: 1 !important; }
 }
 .leaflet-container { font: inherit; }
 /* big water-body bubbles */
