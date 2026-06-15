@@ -170,10 +170,79 @@ WF.heatmap = (function () {
     return { lat: pole.lat, lng: pole.lng, fits: false };
   }
 
+  // ---- shared heat compositing (used by build() and buildFromField()) ----
+
+  // separable box-blur — the soft outer glow
+  function boxBlur(src, w, h, rad) {
+    var tmp = new Float32Array(w * h), out = new Float32Array(w * h);
+    var win = rad * 2 + 1, i, j, acc, o, add, sub;
+    for (j = 0; j < h; j++) { // horizontal
+      o = j * w; acc = 0;
+      for (i = -rad; i <= rad; i++) acc += src[o + Math.max(0, Math.min(w - 1, i))];
+      for (i = 0; i < w; i++) {
+        tmp[o + i] = acc / win;
+        add = src[o + Math.min(w - 1, i + rad + 1)];
+        sub = src[o + Math.max(0, i - rad)];
+        acc += add - sub;
+      }
+    }
+    for (i = 0; i < w; i++) { // vertical
+      acc = 0;
+      for (j = -rad; j <= rad; j++) acc += tmp[i + Math.max(0, Math.min(h - 1, j)) * w];
+      for (j = 0; j < h; j++) {
+        out[i + j * w] = acc / win;
+        add = tmp[i + Math.min(h - 1, j + rad + 1) * w];
+        sub = tmp[i + Math.max(0, j - rad) * w];
+        acc += add - sub;
+      }
+    }
+    return out;
+  }
+
+  // 3-stop ramp: deep amber -> signature gold -> warm bright core (stays gold).
+  var RAMP0 = [230, 150, 30], RAMP1 = [255, 207, 58], RAMP2 = [255, 232, 150];
+  function ramp(t, out) {
+    var u, a, b;
+    if (t < 0.45) { u = t / 0.45; a = RAMP0; b = RAMP1; }
+    else { u = (t - 0.45) / 0.55; if (u > 1) u = 1; a = RAMP1; b = RAMP2; }
+    out[0] = (a[0] + (b[0] - a[0]) * u) | 0;
+    out[1] = (a[1] + (b[1] - a[1]) * u) | 0;
+    out[2] = (a[2] + (b[2] - a[2]) * u) | 0;
+  }
+
+  // Render a PRECOMPUTED continuous field (already 0..1, already water-masked).
+  // F = { field:Float32Array, W, H, mask:Uint8Array, bounds:[[s,w],[n,e]] }.
+  // Skips the per-pixel point-in-polygon ray-cast and the source falloff loop —
+  // this is what makes a fish tap instant even on a huge lake.
+  function buildFromField(F, opts) {
+    var W = F.W, H = F.H, nPix = W * H, core = F.field, mask = F.mask;
+    var canvas = document.createElement("canvas");
+    canvas.width = W; canvas.height = H;
+    var ctx = canvas.getContext("2d");
+    var maxA = opts.maxAlpha != null ? opts.maxAlpha : 0.86;
+    var rad = Math.max(2, Math.round(Math.min(W, H) * 0.07));
+    var glow = boxBlur(core, W, H, rad);
+    var img = ctx.createImageData(W, H), data = img.data, col = [0, 0, 0];
+    var p, idx, h2, aa;
+    for (p = 0; p < nPix; p++) {
+      idx = p * 4;
+      if (!mask[p]) { data[idx + 3] = 0; continue; } // HARD water clip (glow incl.)
+      h2 = core[p] + glow[p] * 0.85; if (h2 > 1) h2 = 1;
+      if (h2 <= 0.05) { data[idx + 3] = 0; continue; }
+      ramp(h2, col);
+      data[idx] = col[0]; data[idx + 1] = col[1]; data[idx + 2] = col[2];
+      aa = Math.pow(h2, 0.72) * maxA; if (aa > 0.96) aa = 0.96;
+      data[idx + 3] = Math.round(aa * 255);
+    }
+    ctx.putImageData(img, 0, 0);
+    return { url: canvas.toDataURL(), bounds: F.bounds };
+  }
+
   // sources: [{lat,lng,heat(0..1),radius(meters)}]
   // returns { url, bounds:[[s,w],[n,e]] } or null
   function build(geom, sources, opts) {
     opts = opts || {};
+    if (opts.field) return buildFromField(opts.field, opts); // lakes pass a precomputed field
     if (!sources.length) return null;
     var gb = geomBBox(geom);
     var sb = [1e9, 1e9, -1e9, -1e9];
@@ -222,52 +291,12 @@ WF.heatmap = (function () {
       }
     }
 
-    // pass 2: outer glow = separable box-blur of the core field. Over-land
-    // cells are 0, so the halo bleeds outward; the mask (pass 3) clips it back
-    // to water, so it can never paint shore.
-    function boxBlur(src, w, h, rad) {
-      var tmp = new Float32Array(w * h), out = new Float32Array(w * h);
-      var win = rad * 2 + 1, i, j, acc, o, add, sub;
-      for (j = 0; j < h; j++) { // horizontal
-        o = j * w; acc = 0;
-        for (i = -rad; i <= rad; i++) acc += src[o + Math.max(0, Math.min(w - 1, i))];
-        for (i = 0; i < w; i++) {
-          tmp[o + i] = acc / win;
-          add = src[o + Math.min(w - 1, i + rad + 1)];
-          sub = src[o + Math.max(0, i - rad)];
-          acc += add - sub;
-        }
-      }
-      for (i = 0; i < w; i++) { // vertical
-        acc = 0;
-        for (j = -rad; j <= rad; j++) acc += tmp[i + Math.max(0, Math.min(h - 1, j)) * w];
-        for (j = 0; j < h; j++) {
-          out[i + j * w] = acc / win;
-          add = tmp[i + Math.min(h - 1, j + rad + 1) * w];
-          sub = tmp[i + Math.max(0, j - rad) * w];
-          acc += add - sub;
-        }
-      }
-      return out;
-    }
+    // pass 2: outer glow = box-blur of the core field (module-scope boxBlur);
+    // the mask (pass 3) clips it back to water so it can never paint shore.
     var rad = Math.max(2, Math.round(Math.min(W, H) * 0.07)); // ~7% of short side
     var glow = boxBlur(core, W, H, rad);
 
-    // pass 3: composite through a brighter multi-stop ramp, masked to water.
-    // ramp: deep amber -> signature gold -> warm bright core (stays gold, not
-    // white, so the hottest pixel still reads as gold).
-    var ramp0 = [230, 150, 30];   // deep amber (low heat)
-    var ramp1 = [255, 207, 58];   // signature gold (mid)
-    var ramp2 = [255, 232, 150];  // warm bright core (hot)
-    function ramp(t, out) {
-      var u, a, b;
-      if (t < 0.45) { u = t / 0.45; a = ramp0; b = ramp1; }
-      else { u = (t - 0.45) / 0.55; if (u > 1) u = 1; a = ramp1; b = ramp2; }
-      out[0] = (a[0] + (b[0] - a[0]) * u) | 0;
-      out[1] = (a[1] + (b[1] - a[1]) * u) | 0;
-      out[2] = (a[2] + (b[2] - a[2]) * u) | 0;
-    }
-
+    // pass 3: composite through the shared multi-stop ramp, masked to water.
     var img = ctx.createImageData(W, H), data = img.data;
     var col = [0, 0, 0]; // reused per pixel (no per-pixel allocation)
     for (p = 0; p < nPix; p++) {
@@ -287,7 +316,7 @@ WF.heatmap = (function () {
   }
 
   return {
-    build: build, inGeom: inGeom,
+    build: build, buildFromField: buildFromField, inGeom: inGeom, geomBBox: geomBBox,
     poleOfInaccessibility: poleOfInaccessibility, labelPoint: labelPoint
   };
 })();

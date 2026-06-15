@@ -189,19 +189,20 @@ WF.map = (function () {
       return;
     }
 
-    // lakes & marine areas: build heat sources, clip to the water polygon
-    var geom = null, sources = [], label = null;
+    // lakes: a data-driven continuous probability field over the real water.
+    // marine: the existing point-source heat around the best spots.
+    var geom = null, sources = [], label = null, fieldData = null;
     if (body.kind === "lake") {
       geom = WF.WATER_SHAPES && WF.WATER_SHAPES[body.id];
       if (!geom) return;
       var seasonScale = WF.score.spotForSpecies(body.spots[0], speciesFilter).score / 100;
       seasonScale = Math.max(0.18, Math.min(1, seasonScale));
-      WF.hotzones.score(body, speciesFilter).forEach(function (z) {
-        if (z.heat < 0.4) return;
-        if (!label) label = z.zone; // hottest zone, for the on-map name
-        sources.push({ lat: z.zone.lat, lng: z.zone.lng, radius: z.zone.r, heat: Math.min(0.97, z.heat * seasonScale) });
-      });
-    } else { // marine
+      var fd = WF.hotzones.field(body, geom, speciesFilter, 320);
+      if (!fd) return;
+      for (var fi = 0; fi < fd.field.length; fi++) fd.field[fi] *= seasonScale; // season = global brightness
+      fieldData = { field: fd.field, W: fd.W, H: fd.H, mask: fd.mask, bounds: fd.bounds };
+      label = { name: fd.peak.name, lat: fd.peak.lat, lng: fd.peak.lng }; // the label IS the field peak
+    } else { // marine — unchanged point-source path
       geom = body.feature && body.feature.geometry;
       if (!geom) return;
       body.spots.forEach(function (s) {
@@ -210,11 +211,12 @@ WF.map = (function () {
         sources.push({ lat: s.lat, lng: s.lng, radius: 2400, heat: Math.min(0.95, rs.score / 100) });
       });
     }
-    if (!sources.length) return;
+    if (body.kind === "lake" ? !fieldData : !sources.length) return;
 
     var img = WF.heatmap.build(geom, sources, {
-      maxDim: body.kind === "lake" ? 320 : 360,    // keep the per-pixel water mask cheap on huge polygons
-      maxAlpha: body.kind === "lake" ? 0.86 : 0.78 // lakes boldest; marine calmer (broad 2400m blobs)
+      maxDim: body.kind === "lake" ? 320 : 360,
+      maxAlpha: body.kind === "lake" ? 0.86 : 0.78, // lakes boldest; marine calmer (broad 2400m blobs)
+      field: fieldData                              // present for lakes -> field render; null for marine
     });
     if (img) L.imageOverlay(img.url, img.bounds, { opacity: 1, interactive: false, className: "heat-ov" }).addTo(goldLayer);
 
