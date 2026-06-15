@@ -221,32 +221,11 @@ WF.map = (function () {
     if (img) L.imageOverlay(img.url, img.bounds, { opacity: 1, interactive: false, className: "heat-ov" }).addTo(goldLayer);
 
     if (label) {
-      // Seat the hottest-zone name on open water NEAR its gold: the lake's pole
-      // of inaccessibility (widest water), biased to the candidate nearest the
-      // hot zone, with the whole pill box kept over water. Wrapped (compact)
-      // fallback for long names on narrow lakes, sized by the real line count.
-      var pole = WF.heatmap.poleOfInaccessibility(geom);
-      var aLat = label.lat, aLng = label.lng, compact = false; // safe fallback
-      if (pole) {
-        var nm = label.name || "";
-        // .zlab is 800/11px (~6.4px/char) + ~16px flame emoji + pill padding.
-        var pxW = nm.length * 6.4 + 22;
-        // Web-Mercator meters/pixel at this latitude and zoom.
-        var mPerPx = 40075016.686 * Math.cos(pole.lat * Math.PI / 180) /
-                     Math.pow(2, map.getZoom() + 8);
-        var halfHeightM = (11 / 2 + 4) * mPerPx; // one 11px line + pill pad
-        var prefer = { lng: label.lng, lat: label.lat };
-        var lp = WF.heatmap.labelPoint(geom, pole, (pxW / 2) * mPerPx, halfHeightM, prefer);
-        if (!lp.fits) {
-          // wrap: cap width at the 116px max-width pill, grow height by line count
-          var lines = Math.max(2, Math.ceil(pxW / 116));
-          var compactHalfW = Math.min((pxW / 2) * mPerPx, 58 * mPerPx);
-          lp = WF.heatmap.labelPoint(geom, pole, compactHalfW, halfHeightM * lines, prefer);
-          compact = true;
-        }
-        aLat = lp.lat; aLng = lp.lng;
-      }
-      L.marker([aLat, aLng], {
+      // The label sits AT the field peak — its actual feature (the model already
+      // nudged it just off the waterline into that feature's water). So the name
+      // always matches where it sits, and it never averages out to mid-lake.
+      var compact = (label.name || "").length > 18; // wrap only long borrowed names
+      L.marker([label.lat, label.lng], {
         icon: L.divIcon({
           className: "zone-label" + (compact ? " compact" : ""),
           html: "<span class='zlab'>🔥 " + label.name + "</span>",

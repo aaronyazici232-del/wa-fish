@@ -392,15 +392,39 @@ WF.hotzones = (function () {
     if (inAmp > 0.4) for (var ii = 0; ii < f.inlets.length; ii++)
       addNudge(f.inlets[ii].lng, f.inlets[ii].lat, 280, (inAmp - 0.4) * 0.4);
 
-    // normalize so peak = 1; record the peak for the label
+    // normalize so peak = 1; the hottest pixel IS the derived hot spot
     for (p = 0; p < n; p++) if (out[p] > mx) { mx = out[p]; peak = p; }
     if (mx <= 0) return null;
     for (p = 0; p < n; p++) out[p] /= mx;
     var px = peak % W, py = (peak / W) | 0;
     var pLng = g.west + (px + 0.5) / W * (g.east - g.west);
     var pLat = g.north - (py + 0.5) / H * (g.north - g.south);
+    // name from the TRUE peak (the feature itself)
+    var nm = peakName(body, f, peak, spId, tempF, wx, pLat, pLng);
+
+    // Seat the label ON that feature: if the peak sits right against the shore
+    // (e.g. a weedy bay), nudge it just off the waterline into the SAME feature's
+    // water for legibility, climbing the distance-to-shore gradient. Hard-capped
+    // at ~250 m so it can NEVER drift to the lake's open middle (the old bug:
+    // the label averaged to the pole 5 km from a near-shore bay).
+    var labP = peak, guard = 0, cellMm = (g.mPerPxX + g.mPerPxY) / 2;
+    while (f.dist[labP] < 120 && guard++ < 40) {
+      var lx = labP % W, ly = (labP / W) | 0, bN = -1, bD = f.dist[labP], ddx, ddy, qx, qy, qq;
+      for (ddy = -1; ddy <= 1; ddy++) for (ddx = -1; ddx <= 1; ddx++) {
+        if (!ddx && !ddy) continue;
+        qx = lx + ddx; qy = ly + ddy; if (qx < 0 || qy < 0 || qx >= W || qy >= H) continue;
+        qq = qy * W + qx; if (!f.mask[qq]) continue;
+        if (f.dist[qq] > bD) { bD = f.dist[qq]; bN = qq; }
+      }
+      if (bN < 0) break;
+      var dxp = (bN % W) - px, dyp = ((bN / W) | 0) - py;
+      if (Math.sqrt(dxp * dxp + dyp * dyp) * cellMm > 250) break; // stay at the feature
+      labP = bN;
+    }
+    var lpx = labP % W, lpy = (labP / W) | 0;
     return { field: out, W: W, H: H, mask: f.mask, bounds: f.bounds,
-             peak: { lat: pLat, lng: pLng, name: peakName(body, f, peak, spId, tempF, wx, pLat, pLng) } };
+             peak: { lat: g.north - (lpy + 0.5) / H * (g.north - g.south),
+                     lng: g.west + (lpx + 0.5) / W * (g.east - g.west), name: nm } };
   }
 
   return { score: score, zonesFor: zonesFor, field: field,
